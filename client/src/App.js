@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import UiContainer from './containers/UiContainer'
 import L from 'leaflet';
 import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
 
@@ -28,17 +29,20 @@ class App extends Component {
   render() {
     const position = [this.state.lat, this.state.lng];
   return (
-  <MapContainer className="map" attributionControl={false} center={position} zoom={this.state.zoom} >
-    <TileLayer
-      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
-    <Marker position={position} icon={myIcon}>
-      <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
-      </Popup>
-    </Marker>
-  </MapContainer>
+    <div className="App">
+      <UiContainer/>
+      <MapContainer className="map" attributionControl={false} center={position} zoom={this.state.zoom} >
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={position} icon={myIcon}>
+            <Popup>
+              A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup>
+          </Marker>
+      </MapContainer>
+    </div>
   );
   }
 }
