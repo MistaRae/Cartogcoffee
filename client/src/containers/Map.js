@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import coffeeCup from '../images/coffeecup.png';
 import coffeeShadow from '../images/coffeecup-shadow.png'
 import {getCoffees} from "../Services"
+import MarkerList from "../components/map_components/MarkerList"
 
 const Map = () => {
 
@@ -14,6 +15,8 @@ const Map = () => {
       setCoffees(allCoffees);
     });
   }, [])
+
+
 
   const state = {
       coffeeIcon: {
@@ -50,18 +53,21 @@ const Map = () => {
     const positionCoffeeIcon2 = [state.coffeeIcon2.lat, state.coffeeIcon2.lng];
 
 return(
+
+        <>
+        {    coffees ?
         <MapContainer className="map" attributionControl={false} center={positionCoffeeIcon} zoom={state.zoom} >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {/* <Marker position={positionCoffeeIcon} icon={coffeeIcon}>
+        <Marker position={positionCoffeeIcon} icon={coffeeIcon}>
             <Popup>
             <h3>sdafsdf</h3> <br /> I love my coffee
             </Popup>
-        </Marker>   */}
-
-        <Marker position={positionCoffeeIcon} icon={coffeeIcon}>
+        </Marker>   
+        
+        {/* <Marker position={positionCoffeeIcon} icon={coffeeIcon}>
           <Popup>
             <h3>{coffees[0].country}</h3> <br /> I love my coffee
             </Popup>
@@ -70,8 +76,11 @@ return(
           <Popup>
             <h3>{coffees[0].region}</h3> <br /> I love my coffee
             </Popup>
-        </Marker>
-      </MapContainer>
+        </Marker> */}
+       {/* <MarkerList coffees={coffees} icon={coffeeIcon}/> */}
+      </MapContainer> : null }
+      </>
+
   )
 
 }
