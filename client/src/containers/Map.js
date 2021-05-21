@@ -28,7 +28,7 @@ const Map = () => {
         lng: -4.281100
       },
 
-      zoom: 3
+      zoom: 2
     }
 
     const coffeeIcon = L.icon({
@@ -61,22 +61,7 @@ return(
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {/* <Marker position={positionCoffeeIcon} icon={coffeeIcon}>
-            <Popup>
-            <h3>sdafsdf</h3> <br /> I love my coffee
-            </Popup>
-        </Marker>    */}
-        
-        {/* <Marker position={positionCoffeeIcon} icon={coffeeIcon}>
-          <Popup>
-            <h3>{coffees[0].country}</h3> <br /> I love my coffee
-            </Popup>
-        </Marker>
-        <Marker position={positionCoffeeIcon2} icon={coffeeIcon2}>
-          <Popup>
-            <h3>{coffees[0].region}</h3> <br /> I love my coffee
-            </Popup>
-        </Marker> */}
+
        <MarkerList coffees={coffees} icon={coffeeIcon} position={positionCoffeeIcon}/>
       </MapContainer> : null }
       </>
