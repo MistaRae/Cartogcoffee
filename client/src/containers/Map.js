@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import L from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import coffeeCup from '../images/coffeecup.png';
 import coffeeShadow from '../images/coffeecup-shadow.png'
+import {getCoffees} from "../Services"
 
 const Map = () => {
+
+  const [coffees, setCoffees] = useState([]);
+  
+  useEffect(() => {
+    getCoffees().then((allCoffees) =>  {
+      setCoffees(allCoffees);
+    });
+  }, [])
 
   const state = {
       coffeeIcon: {
