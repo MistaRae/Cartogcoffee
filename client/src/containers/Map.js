@@ -12,7 +12,7 @@ const Map = () => {
         lng: -4.281100
       },
 
-      zoom: 13,
+      zoom: 3
     }
 
     const coffeeIcon = L.icon({
