@@ -17,6 +17,6 @@ our app must display educational content regarding coffee:
   - add additional filter criteria
   - zoom to filtered region 
   - include a section on preperation instructions
-  - add a cloropleth to the map to display coffee production/consumption in each country 
+  - add a choropleth to the map to display coffee production/consumption in each country 
   - additional styling
   
