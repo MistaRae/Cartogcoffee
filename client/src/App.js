@@ -2,40 +2,42 @@ import React, {Component} from 'react';
 import './App.css';
 import L from 'leaflet';
 import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
+import coffeeCup from './images/coffeecup.png';
+import coffeeShadow from './images/coffeecup-shadow-2.png'
 
-// type State = {
-//   lat: Number,
-//   lng: Number,
-//   zoom: Number,
-// }
-
-var myIcon = L.icon({
-  iconUrl: 'https://www.pinclipart.com/picdir/big/130-1303440_current-location-location-map-nearby-pin-pointer-slider.png',
-  iconSize: [25, 41],
-  iconAnchor: [12.5, 41],
-  popupAnchor: [0, -41]
-});
 
 
 class App extends Component {
 
   state = {
+    coffeeIcon: {
     lat: 51.505,
-    lng: 0.09,
+    lng: 0.09
+    },
+    
     zoom: 13,
   }
 
+  coffeeIcon = L.icon({
+    iconUrl: coffeeCup,
+    shadowUrl: coffeeShadow,
+    iconSize: [38, 38],
+    shadowSize: [47, 34],
+    shadowAnchor: [15, 14],
+    popupAnchor: [0, -20]
+  });
+
   render() {
-    const position = [this.state.lat, this.state.lng];
+    const positionCoffeeIcon = [this.state.coffeeIcon.lat, this.state.coffeeIcon.lng];
   return (
-  <MapContainer className="map" attributionControl={false} center={position} zoom={this.state.zoom} >
+  <MapContainer className="map" attributionControl={false} center={positionCoffeeIcon} zoom={this.state.zoom} >
     <TileLayer
       attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
-    <Marker position={position} icon={myIcon}>
+    <Marker position={positionCoffeeIcon} icon={this.coffeeIcon}>
       <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
+        This coffee is tasty!. <br /> I love my coffee
       </Popup>
     </Marker>
   </MapContainer>
