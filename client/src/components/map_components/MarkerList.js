@@ -5,11 +5,11 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 // import coffeeShadow from '.../images/coffeecup-shadow.png'
 // import {getCoffees} from ".../Services"
 
-const MarkerList = ({coffees, coffeeIcon}) => {
+const MarkerList = ({coffees, icon, position}) => {
     console.log('hello', {coffees})
     const markerNodes = coffees.map((coffee) => {
         return <Marker 
-        position={[coffee.lat, coffee.long]}  icon={coffeeIcon}>
+        position={[coffee.lat, coffee.long]} icon={icon}>
             <Popup>
             <h3>sdafsdf</h3> <br /> I love my coffee
             </Popup>
