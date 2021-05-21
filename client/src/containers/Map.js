@@ -11,8 +11,12 @@ const Map = () => {
         lat: 55.829120,
         lng: -4.281100
       },
+      coffeeIcon2: {
+        lat: 70.829120,
+        lng: -4.281100
+      },
 
-      zoom: 13,
+      zoom: 3
     }
 
     const coffeeIcon = L.icon({
@@ -24,7 +28,17 @@ const Map = () => {
       popupAnchor: [0, -20]
     });
 
+    const coffeeIcon2 = L.icon({
+      iconUrl: coffeeCup,
+      shadowUrl: coffeeShadow,
+      iconSize: [38, 38],
+      shadowSize: [47, 34],
+      shadowAnchor: [15, 14],
+      popupAnchor: [0, -20]
+    });
+
     const positionCoffeeIcon = [state.coffeeIcon.lat, state.coffeeIcon.lng];
+    const positionCoffeeIcon2 = [state.coffeeIcon2.lat, state.coffeeIcon2.lng];
 
 return(
         <MapContainer className="map" attributionControl={false} center={positionCoffeeIcon} zoom={state.zoom} >
@@ -33,6 +47,11 @@ return(
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Marker position={positionCoffeeIcon} icon={coffeeIcon}>
+          <Popup>
+            <h3>This coffee is tasty!</h3> <br /> I love my coffee
+            </Popup>
+        </Marker>
+        <Marker position={positionCoffeeIcon2} icon={coffeeIcon2}>
           <Popup>
             <h3>This coffee is tasty!</h3> <br /> I love my coffee
             </Popup>
