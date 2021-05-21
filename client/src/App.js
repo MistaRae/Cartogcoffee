@@ -3,7 +3,7 @@ import './App.css';
 import L from 'leaflet';
 import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
 import coffeeCup from './images/coffeecup.png';
-import coffeeShadow from './images/coffeecup-shadow-2.png'
+import coffeeShadow from './images/coffeecup-shadow.png'
 
 
 
@@ -11,8 +11,8 @@ class App extends Component {
 
   state = {
     coffeeIcon: {
-    lat: 51.505,
-    lng: 0.09
+    lat: 55.829120,
+    lng: -4.281100
     },
     
     zoom: 13,
@@ -37,7 +37,7 @@ class App extends Component {
     />
     <Marker position={positionCoffeeIcon} icon={this.coffeeIcon}>
       <Popup>
-        This coffee is tasty!. <br /> I love my coffee
+        <h3>This coffee is tasty!</h3> <br /> I love my coffee
       </Popup>
     </Marker>
   </MapContainer>
