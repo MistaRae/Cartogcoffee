@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -14,7 +15,6 @@
   border-style: solid;
   border-color: black;
   /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
-
 }
 
 #footer {
@@ -32,12 +32,10 @@
   flex-direction: row;
   justify-content: space-around;
   padding: 25px
-  
 }
 
 .social-image {
   background-color: white;
-
   border-style: solid;
   border-width: 0pt;
   border-color: black;
@@ -78,8 +76,7 @@
   /* background-image: url(https://images.unsplash.com/photo-1465176728568-7da7e336b1e9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80); */
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 100px;
-    
+  padding: 100px;  
 }
 
 #navbar-container {
@@ -87,8 +84,6 @@
   flex-direction: row;
   justify-content: space-around;
   padding-top: 20px;
-  
-
 }
 
 .drop-down {
@@ -98,4 +93,7 @@
   font-size: larger;
 }
 
-
+.map {
+  height: 70vh;
+  width: 70vh;
+}
