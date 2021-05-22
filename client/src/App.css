@@ -95,6 +95,9 @@
   border-color: transparent;
   padding: 1%;
   font-size: large;
+  font-weight: bolder;
+  
+
 }
 
 .map {
@@ -108,17 +111,18 @@
   text-shadow: snow;
   font-weight: bold;
   background:antiquewhite;
+  background-size: unset;
   color: lightslategray;
   border-radius: 0%;
 
 }
 
 #popup > h3 {
-  color: red;
+  color: blue;
   margin-bottom: 2px;
   font-size: x-large;
   text-align: center;
-  text-decoration: saddlebrown;
+ 
 }
 
 
