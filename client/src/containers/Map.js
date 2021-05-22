@@ -12,10 +12,6 @@ const Map = () => {
 
   const [coffees, setCoffees] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState([]);
-  const [LatCenter, setLatCenter] = useState(0);
-  const [LongCenter, setLongCenter] = useState(0);
-  const [LatLong, setLatLong] = useState([43.653225, -79.383186]);
-  const [Zoom, setZoom] = useState(2)
   
   useEffect(() => {
     getCoffees().then((allCoffees) =>  {
@@ -23,19 +19,8 @@ const Map = () => {
     });
   }, [])
 
-
-  const setTargetAmericas = (() => {
-    setSelectedRegion("Americas")
-    setLatCenter(-5);
-    setLongCenter(-80);
-    setZoom(3);
-  })
-
   const onSelectRegion = function (region) {
     setSelectedRegion(region)
-    if (region == "Americas") {
-      setTargetAmericas()
-    }
   }
 
 
@@ -45,7 +30,7 @@ const Map = () => {
       map.flyTo([-26, -60], 3.2)
     }
     else if (selectedRegion === "Africa")  {
-      map.flyTo([5, 13], 3.4)
+      map.flyTo([0, 13], 3.4)
     }
     return null
   }
@@ -63,6 +48,8 @@ const Map = () => {
       },
 
       zoom: 2,
+      lat: 0,
+      lon: -25
     }
 
     const coffeeIcon = L.icon({
@@ -74,25 +61,9 @@ const Map = () => {
       popupAnchor: [0, -20]
     });
 
-    const coffeeIcon2 = L.icon({
-      iconUrl: coffeeCup,
-      shadowUrl: coffeeShadow,
-      iconSize: [38, 38],
-      shadowSize: [47, 34],
-      shadowAnchor: [15, 14],
-      popupAnchor: [0, -20]
-    });
-
-    const positionCenter = [LatCenter, LongCenter];
+    const positionCenter = [state.lat, state.lon];
     const positionCoffeeIcon = [state.coffeeIcon.lat, state.coffeeIcon.lng];
-    const positionCoffeeIcon2 = [state.coffeeIcon2.lat, state.coffeeIcon2.lng];
 
-    const rectangle = [
-      [51.49, -0.08],
-      [251.5, -0.06],
-    ]
-
-    const blackOptions = { color: 'black' }
 
 return(
 
@@ -102,7 +73,7 @@ return(
          <NavBar coffees={coffees} onSelectRegion={onSelectRegion}/>
 
 
-        <MapContainer className="map" attributionControl={false} center={positionCenter} zoom={Zoom} >
+        <MapContainer className="map" attributionControl={false} center={positionCenter} zoom={state.zoom} >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
