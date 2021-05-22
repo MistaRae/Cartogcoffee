@@ -42,7 +42,7 @@ const Map = () => {
   function FlyTo() {
     const map = useMap()
     if (selectedRegion === "Americas")  {
-      map.flyTo([40.730610, -73.935242], 8)
+      map.flyTo([-26, -60], 3.2)
       
     }
     return null
