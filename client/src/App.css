@@ -13,7 +13,7 @@
   margin: 0;
   font-size:120pt;
   border-style: solid;
-  border-color: black;
+  border-color: transparent;
   /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
@@ -62,7 +62,7 @@
 #Ui-Container {
   max-width: 100%;
   max-height: auto;
-  background-color: antiquewhite;
+  background-color: lightslategray
   /* background-image: url(https://images.unsplash.com/photo-1551610290-e153ec567dd8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1513&q=80); */
 }
 
@@ -90,10 +90,11 @@
 
 .drop-down {
   margin-bottom: 5%;
-  color:black;
+  color:antiquewhite;
   background-color:transparent;
-  border-color: white;
-  font-size: larger;
+  border-color: transparent;
+  padding: 1%;
+  font-size: large;
 }
 
 /* DO NOT adjust as it messes up zoom/fly settings */
@@ -108,11 +109,21 @@
 }
 
 #Popup  {
-  background:#2c3e50;
-  color:black;
-  /* font-size:100px; */
-  /* line-height:24px; */
-  }
+  background:antiquewhite;
+  background-position: initial;
+  color: lightslategray;
+  border-radius: 0%;
+
+}
+
+/* #Popup-country-name  {
+  align-content: center;
+
+} */
+
+
+
+
 /* custom-popup .leaflet-popup-content-wrapper a {
   color:rgba(255,255,255,0.5);
   }
