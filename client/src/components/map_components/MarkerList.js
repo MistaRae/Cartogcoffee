@@ -10,8 +10,9 @@ const MarkerList = ({coffees, icon}) => {
         position={[coffee.lat, coffee.long]} icon={icon}>
         <div id= 'Popup'></div>
              <Popup>
-             <div id= 'Popup'>
+             <div id= 'Popup'>           
             <h3>{coffee.country}</h3>
+            
             <p>
                 <ul>
                     <li>Region: {coffee.region}</li>
