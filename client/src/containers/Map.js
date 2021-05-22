@@ -10,7 +10,10 @@ import MarkerList from "../components/map_components/MarkerList"
 const Map = () => {
 
   const [coffees, setCoffees] = useState([]);
-  const [selectedRegion, setSelectedRegion] = useState([])
+  const [selectedRegion, setSelectedRegion] = useState([]);
+  const [LatCenter, setLatCenter] = useState(0);
+  const [LongCenter, setLongCenter] = useState(0);
+  const [Zoom, setZoom] = useState(2)
   
   useEffect(() => {
     getCoffees().then((allCoffees) =>  {
@@ -18,12 +21,21 @@ const Map = () => {
     });
   }, [])
 
+  const setTargetAmericas = (() => {
+    setLatCenter(-5);
+    setLongCenter(-80);
+    setZoom(3);
+  })
 
   const onSelectRegion = function (region) {
     setSelectedRegion(region)
+    if (region == "Americas") {
+      setTargetAmericas()
+    }
   }
 
   const state = {
+
       coffeeIcon: {
         lat: 55.829120,
         lng: -4.281100
@@ -54,6 +66,7 @@ const Map = () => {
       popupAnchor: [0, -20]
     });
 
+    const positionCenter = [LatCenter, LongCenter];
     const positionCoffeeIcon = [state.coffeeIcon.lat, state.coffeeIcon.lng];
     const positionCoffeeIcon2 = [state.coffeeIcon2.lat, state.coffeeIcon2.lng];
 
@@ -63,7 +76,7 @@ return(
         {    coffees ?
         <div>
          <NavBar coffees={coffees} onSelectRegion={onSelectRegion}/>
-        <MapContainer className="map" attributionControl={false} center={positionCoffeeIcon} zoom={state.zoom} >
+        <MapContainer className="map" attributionControl={false} center={positionCenter} zoom={Zoom} >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
