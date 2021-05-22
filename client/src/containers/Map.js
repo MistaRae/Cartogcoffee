@@ -20,7 +20,7 @@ const Map = () => {
     getCoffees().then((allCoffees) => {
       setCoffees(allCoffees);
     });
-  }, [])
+  }, []);
 
   useEffect(() => {
     filterCoffees()
@@ -28,15 +28,15 @@ const Map = () => {
 
   const onSelectRegion = function (region) {
     setSelectedRegion(region)
-  }
+  };
 
   const onSelectTaste = function (taste) {
     setSelectedTaste(taste)
-  }
+  };
 
   const onSelectBean = function (bean) {
     setSelectedBean(bean)
-  }
+  };
 
 
   function FlyTo() {
@@ -51,7 +51,7 @@ const Map = () => {
       map.flyTo([0, 13], 3.4)
     }
     return null
-  }
+  };
 
   // INITIAL STATE
   const state = {
@@ -59,7 +59,7 @@ const Map = () => {
     zoom: 2,
     lat: 0,
     lon: 0
-  }
+  };
 
   const coffeeIcon = L.icon({
     iconUrl: coffeeCup,
@@ -89,7 +89,7 @@ const Map = () => {
         filteredByTaste = coffees
       }
     }
-    ))
+    ));
 
     let filteredByBean = []
     filteredByTaste.forEach((coffee => {
@@ -102,7 +102,7 @@ const Map = () => {
       else {
         filteredByBean = filteredByTaste
       }
-    }))
+    }));
 
     let filteredByRegion = []
     filteredByBean.forEach((coffee => {
@@ -147,6 +147,6 @@ const Map = () => {
 
   )
 
-}
+};
 
 export default Map;
