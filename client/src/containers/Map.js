@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import NavBar from '../components/NavBar'
 import L from 'leaflet';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer } from 'react-leaflet';
 import coffeeCup from '../images/coffeecup.png';
 import coffeeShadow from '../images/coffeecup-shadow.png'
 import {getCoffees} from "../Services"
@@ -56,6 +57,8 @@ return(
 
         <>
         {    coffees ?
+        <div>
+         <NavBar coffees={coffees}/>
         <MapContainer className="map" attributionControl={false} center={positionCoffeeIcon} zoom={state.zoom} >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -63,7 +66,7 @@ return(
         />
 
        <MarkerList coffees={coffees} icon={coffeeIcon} position={positionCoffeeIcon}/>
-      </MapContainer> : null }
+      </MapContainer></div> : null }
       </>
 
   )
