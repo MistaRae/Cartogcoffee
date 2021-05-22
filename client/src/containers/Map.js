@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import NavBar from '../components/NavBar'
 import L from 'leaflet';
-import { MapContainer, TileLayer, useMap} from 'react-leaflet';
+import { MapContainer, TileLayer, Rectangle, useMap} from 'react-leaflet';
 import coffeeCup from '../images/coffeecup.png';
 import coffeeShadow from '../images/coffeecup-shadow.png'
 import {getCoffees} from "../Services"
@@ -14,6 +14,7 @@ const Map = () => {
   const [selectedRegion, setSelectedRegion] = useState([]);
   const [LatCenter, setLatCenter] = useState(0);
   const [LongCenter, setLongCenter] = useState(0);
+  const [LatLong, setLatLong] = useState([43.653225, -79.383186]);
   const [Zoom, setZoom] = useState(2)
   
   useEffect(() => {
@@ -46,7 +47,7 @@ const Map = () => {
 
   // INITIAL STATE
   const state = {
-
+      
       coffeeIcon: {
         lat: 55.829120,
         lng: -4.281100
@@ -56,7 +57,7 @@ const Map = () => {
         lng: -4.281100
       },
 
-      zoom: 2
+      zoom: 2,
     }
 
     const coffeeIcon = L.icon({
@@ -81,6 +82,12 @@ const Map = () => {
     const positionCoffeeIcon = [state.coffeeIcon.lat, state.coffeeIcon.lng];
     const positionCoffeeIcon2 = [state.coffeeIcon2.lat, state.coffeeIcon2.lng];
 
+    const rectangle = [
+      [51.49, -0.08],
+      [251.5, -0.06],
+    ]
+
+    const blackOptions = { color: 'black' }
 
 return(
 
@@ -98,6 +105,7 @@ return(
         />
 
        <MarkerList coffees={coffees} icon={coffeeIcon} position={positionCoffeeIcon}/>
+       {/* <Rectangle bounds={rectangle} pathOptions={blackOptions} /> */}
       </MapContainer>
       
       </div> : null }

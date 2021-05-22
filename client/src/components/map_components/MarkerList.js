@@ -1,5 +1,5 @@
 import React from 'react';
-import { Marker, Popup } from 'react-leaflet';
+import { Marker, Popup, Tooltip } from 'react-leaflet';
 
 
 const MarkerList = ({coffees, icon}) => {
@@ -19,6 +19,7 @@ const MarkerList = ({coffees, icon}) => {
                 </ul>
             </p>
             </Popup>
+            <Tooltip direction="bottom" offset={[0, 20]} opacity={0.9}>{coffee.country}</Tooltip>
 
         </Marker>
         
