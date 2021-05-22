@@ -62,10 +62,12 @@
 #Ui-Container {
   max-width: 100%;
   max-height: auto;
+  background-color: antiquewhite;
   /* background-image: url(https://images.unsplash.com/photo-1551610290-e153ec567dd8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1513&q=80); */
 }
 
 #map-container {
+  
   align-content: center;
   margin-top:20px;
   margin-left: auto;
@@ -87,8 +89,9 @@
 }
 
 .drop-down {
-  color:antiquewhite;
-  background-color:black;
+  margin-bottom: 10%;
+  color:black;
+  background-color:transparent;
   border-color: black;
   font-size: larger;
 }
@@ -98,7 +101,28 @@
   height: 70vh;
 }
 
+
 #property {
   background-color: rgba(62, 20, 20, 0.818);
   color: white;
 }
+
+#Popup  {
+  background:#2c3e50;
+  color:black;
+  /* font-size:100px; */
+  /* line-height:24px; */
+  }
+/* custom-popup .leaflet-popup-content-wrapper a {
+  color:rgba(255,255,255,0.5);
+  }
+.custom-popup .leaflet-popup-tip-container {
+  width:30px;
+  height:15px;
+  }
+.custom-popup .leaflet-popup-tip {
+  border-left:15px solid transparent;
+  border-right:15px solid transparent;
+  border-top:15px solid #2c3e50;
+  } */
+
