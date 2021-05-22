@@ -76,6 +76,7 @@ const Map = () => {
 
 
   function filterCoffees() {
+    // three filters in series
     let filteredByTaste = []
     coffees.forEach((coffee => {
       if (selectedTaste !== "All") {
@@ -102,9 +103,20 @@ const Map = () => {
         filteredByBean = filteredByTaste
       }
     }))
-    setFilteredCoffees(filteredByBean)
-  };
 
+    let filteredByRegion = []
+    filteredByBean.forEach((coffee => {
+      if (selectedRegion !== "All") {
+        if (coffee.region == selectedRegion) {
+          filteredByRegion.push(coffee)
+        }
+      }
+      else {
+        filteredByRegion = filteredByBean
+      }
+    }))
+    setFilteredCoffees(filteredByRegion)
+  };
 
 
   return (
