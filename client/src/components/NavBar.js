@@ -1,11 +1,16 @@
 import React from 'react'
 
 
-const NavBar = ({ coffees, onSelectRegion }) => {
+const NavBar = ({ coffees, onSelectRegion, onSelectTaste }) => {
 
     const handleSelectChange = function (event) {
         let regionObject = coffees[event.target.value];
         onSelectRegion(regionObject.region)
+    }
+
+    const handleTasteChange = function (event) {
+        let taste = event.target.value;
+        onSelectTaste(taste)
     }
 
     const regionList = coffees.map((coffee, index) => {
@@ -26,7 +31,7 @@ const NavBar = ({ coffees, onSelectRegion }) => {
     }
 
     const flavourMapping = getFlavours().map((flavour, index) => {
-        return <option value={index} key={index}>{flavour}</option>
+        return <option value={flavour} key={index}>{flavour}</option>
     });
 
 
@@ -35,7 +40,7 @@ const NavBar = ({ coffees, onSelectRegion }) => {
             <select onChange={handleSelectChange} class="drop-down" name="field-1" id="field-1">
                 {regionList}
             </select>
-            <select class="drop-down" name="field-2" id="field-2">
+            <select onChange={handleTasteChange} class="drop-down" name="field-2" id="field-2">
                 {flavourMapping}
             </select>
             <select class="drop-down" name="field-3" id="field-3">

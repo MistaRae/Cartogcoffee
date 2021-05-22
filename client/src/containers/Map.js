@@ -12,6 +12,7 @@ const Map = () => {
 
   const [coffees, setCoffees] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState([]);
+  const [selectedTaste, setSelectedTaste] = useState('');
   
   useEffect(() => {
     getCoffees().then((allCoffees) =>  {
@@ -21,6 +22,10 @@ const Map = () => {
 
   const onSelectRegion = function (region) {
     setSelectedRegion(region)
+  }
+
+  const onSelectTaste = function (taste)  {
+    setSelectedTaste(taste)
   }
 
 
@@ -70,7 +75,7 @@ return(
         <>
         {    coffees ?
         <div>
-         <NavBar coffees={coffees} onSelectRegion={onSelectRegion}/>
+         <NavBar coffees={coffees} onSelectRegion={onSelectRegion} onSelectTaste={onSelectTaste}/>
 
 
         <MapContainer className="map" attributionControl={false} center={positionCenter} zoom={state.zoom} >
