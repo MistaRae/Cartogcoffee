@@ -108,23 +108,33 @@
   color: white;
 }
 
-#Popup  {
+#popup  {
+  display: flexbox;
+  justify-content: center;
+  text-shadow: snow;
+  font-weight: bold;
   background:antiquewhite;
-  background-position: initial;
   color: lightslategray;
   border-radius: 0%;
 
 }
 
-/* #Popup-country-name  {
-  align-content: center;
+#popup > h3 {
+  color: red;
+  margin-bottom: 2px;
+  font-size: x-large;
+  text-align: center;
+  text-decoration: saddlebrown;
+}
 
-} */
 
 
 
 
-/* custom-popup .leaflet-popup-content-wrapper a {
+
+
+/* 
+.custom-popup .leaflet-popup-content-wrapper a {
   color:rgba(255,255,255,0.5);
   }
 .custom-popup .leaflet-popup-tip-container {
@@ -135,5 +145,9 @@
   border-left:15px solid transparent;
   border-right:15px solid transparent;
   border-top:15px solid #2c3e50;
+<<<<<<< HEAD
   } */
 
+=======
+  }  */
+>>>>>>> 4cc9310 (aligned text in popup)

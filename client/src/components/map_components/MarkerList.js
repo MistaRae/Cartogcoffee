@@ -8,9 +8,9 @@ const MarkerList = ({coffees, icon}) => {
     const markerNodes = coffees.map((coffee) => {
         return <Marker 
         position={[coffee.lat, coffee.long]} icon={icon}>
-        <div id= 'Popup'></div>
+        
              <Popup>
-             <div id= 'Popup'>           
+             <div id= 'popup'>           
             <h3>{coffee.country}</h3>
             
             <p>
