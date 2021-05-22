@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const NavBar = ({ coffees, onSelectRegion, onSelectTaste }) => {
+const NavBar = ({ coffees, onSelectRegion, onSelectTaste}) => {
 
     const handleSelectChange = function (event) {
         let regionObject = coffees[event.target.value];

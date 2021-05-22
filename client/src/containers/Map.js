@@ -13,6 +13,7 @@ const Map = () => {
   const [coffees, setCoffees] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState([]);
   const [selectedTaste, setSelectedTaste] = useState('');
+  const [filteredCoffees, setFilteredCoffees] = useState([coffees])
 
   useEffect(() => {
     getCoffees().then((allCoffees) => {
@@ -90,7 +91,7 @@ const Map = () => {
       }
     }
     ))
-    setCoffees(filteredByTaste)
+    setFilteredCoffees(filteredByTaste)
   };
 
 
@@ -100,7 +101,11 @@ const Map = () => {
     <>
       {    coffees ?
         <div>
-          <NavBar coffees={coffees} onSelectRegion={onSelectRegion} onSelectTaste={onSelectTaste} selectedTaste={selectedTaste} />
+          <NavBar coffees={coffees} 
+          onSelectRegion={onSelectRegion} 
+          onSelectTaste={onSelectTaste} 
+          selectedTaste={selectedTaste}
+           />
 
 
           <MapContainer className="map" attributionControl={false} center={positionCenter} zoom={state.zoom} >
@@ -109,7 +114,7 @@ const Map = () => {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            <MarkerList coffees={coffees} icon={coffeeIcon} position={positionCoffeeIcon} />
+            <MarkerList coffees={filteredCoffees} icon={coffeeIcon} position={positionCoffeeIcon} />
             <FlyTo />
           </MapContainer>
 
