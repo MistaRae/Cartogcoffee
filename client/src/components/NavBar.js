@@ -4,18 +4,23 @@ import React from 'react'
 const NavBar = ({ coffees, onSelectRegion, onSelectTaste}) => {
 
     const handleSelectChange = function (event) {
+        if (event.target.value !== "All") {
         let regionObject = coffees[event.target.value];
         onSelectRegion(regionObject.region)
     }
+        else {
+            onSelectRegion("All")
+        }
+    };
 
     const handleTasteChange = function (event) {
         let taste = event.target.value;
         onSelectTaste(taste)
-    }
+    };
 
     const regionList = coffees.map((coffee, index) => {
         return <option value={index} key={index}>{coffee.region}</option>
-    })
+    });
 
     const getFlavours = () => {
 
@@ -28,7 +33,7 @@ const NavBar = ({ coffees, onSelectRegion, onSelectTaste}) => {
         const flavourSet = new Set(flavourList);
         const flavourArray = Array.from(flavourSet);
         return flavourArray
-    }
+    };
 
     const flavourMapping = getFlavours().map((flavour, index) => {
         return <option value={flavour} key={index}>{flavour}</option>
@@ -51,6 +56,6 @@ const NavBar = ({ coffees, onSelectRegion, onSelectTaste}) => {
             </select>
         </div>
     )
-}
+};
 
-export default NavBar
+export default NavBar;

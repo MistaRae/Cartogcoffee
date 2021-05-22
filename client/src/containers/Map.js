@@ -37,7 +37,7 @@ const Map = () => {
   function FlyTo() {
     const map = useMap()
     if (selectedRegion === "All") {
-      map.flyTo([0, 0], 0)
+      map.flyTo(positionCenter, state.zoom)
     }
     if (selectedRegion === "Americas") {
       map.flyTo([-26, -60], 3.2)
