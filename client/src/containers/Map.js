@@ -13,6 +13,7 @@ const Map = () => {
   const [coffees, setCoffees] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [selectedTaste, setSelectedTaste] = useState('All');
+  const [selectedBean, setSelectedBean] = useState('Both');
   const [filteredCoffees, setFilteredCoffees] = useState([coffees])
 
   useEffect(() => {
@@ -23,7 +24,7 @@ const Map = () => {
 
   useEffect(() => {
     filterCoffees()
-  }, [selectedTaste, coffees])
+  }, [selectedRegion, selectedTaste, selectedBean, coffees])
 
   const onSelectRegion = function (region) {
     setSelectedRegion(region)
@@ -31,6 +32,10 @@ const Map = () => {
 
   const onSelectTaste = function (taste) {
     setSelectedTaste(taste)
+  }
+
+  const onSelectBean = function (bean) {
+    setSelectedBean(bean)
   }
 
 
@@ -78,13 +83,26 @@ const Map = () => {
           filteredByTaste.push(coffee)
         }
 
-        }
-        else {
-          filteredByTaste = coffees
+      }
+      else {
+        filteredByTaste = coffees
       }
     }
     ))
-    setFilteredCoffees(filteredByTaste)
+
+    let filteredByBean = []
+    filteredByTaste.forEach((coffee => {
+      if (selectedBean !== "Both") {
+        if (coffee.bean_type == selectedBean) {
+          filteredByBean.push(coffee)
+        }
+
+      }
+      else {
+        filteredByBean = filteredByTaste
+      }
+    }))
+    setFilteredCoffees(filteredByBean)
   };
 
 
@@ -94,11 +112,12 @@ const Map = () => {
     <>
       {    coffees ?
         <div>
-          <NavBar coffees={coffees} 
-          onSelectRegion={onSelectRegion} 
-          onSelectTaste={onSelectTaste} 
-          selectedTaste={selectedTaste}
-           />
+          <NavBar coffees={coffees}
+            onSelectRegion={onSelectRegion}
+            onSelectTaste={onSelectTaste}
+            onSelectBean={onSelectBean}
+            selectedTaste={selectedTaste}
+          />
 
 
           <MapContainer className="map" attributionControl={false} center={positionCenter} zoom={state.zoom} >

@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const NavBar = ({ coffees, onSelectRegion, onSelectTaste}) => {
+const NavBar = ({ coffees, onSelectRegion, onSelectTaste, onSelectBean}) => {
 
     const handleSelectChange = function (event) {
         if (event.target.value !== "All") {
@@ -16,6 +16,11 @@ const NavBar = ({ coffees, onSelectRegion, onSelectTaste}) => {
     const handleTasteChange = function (event) {
         let taste = event.target.value;
         onSelectTaste(taste)
+    };
+
+    const handleBeanChange = function (event) {
+        let bean = event.target.value;
+        onSelectBean(bean)
     };
 
     const regionList = coffees.map((coffee, index) => {
@@ -60,7 +65,7 @@ const NavBar = ({ coffees, onSelectRegion, onSelectTaste}) => {
 
             <span>
                 <label htmlFor="type">Bean Type: </label>
-            <select class="drop-down" name="type" id="type">
+            <select onChange={handleBeanChange} class="drop-down" name="type" id="type">
                 <option value="Both">Both</option>
                 <option value="Arabica">Arabica</option>
                 <option value="Robusta">Robusta</option>
