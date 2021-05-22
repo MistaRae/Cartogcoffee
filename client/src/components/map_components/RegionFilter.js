@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RegionFilter = (coffees) => {
+const RegionFilter = ({coffees}) => {
     // console.log('regionFilter', {coffees})
     // const regionList = coffees.coffees.coffees.map((coffee) => {
     //     console.log('hello', {coffees})

@@ -10,6 +10,7 @@ import MarkerList from "../components/map_components/MarkerList"
 const Map = () => {
 
   const [coffees, setCoffees] = useState([]);
+  const [selectedRegion, setSelectedRegion] = useState([])
   
   useEffect(() => {
     getCoffees().then((allCoffees) =>  {
@@ -18,6 +19,9 @@ const Map = () => {
   }, [])
 
 
+  const onSelectRegion = function (region) {
+    setSelectedRegion(region)
+  }
 
   const state = {
       coffeeIcon: {
@@ -58,7 +62,7 @@ return(
         <>
         {    coffees ?
         <div>
-         <NavBar coffees={coffees}/>
+         <NavBar coffees={coffees} onSelectRegion={onSelectRegion}/>
         <MapContainer className="map" attributionControl={false} center={positionCoffeeIcon} zoom={state.zoom} >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

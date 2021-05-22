@@ -1,15 +1,22 @@
 import React from 'react'
 
 
-const NavBar = (coffees) => {
+const NavBar = ({coffees, onSelectRegion}) => {
 
-    const regionList = coffees.coffees.map(coffee => {
-        return <option value={coffee.region}>{coffee.region}</option>
+    const handleSelectChange = function (event) {
+        let region
+        region = coffees[event.target.value];
+        onSelectRegion(region)
+
+    }
+
+    const regionList = coffees.map((coffee, index) => {
+        return <option value={index} key={index}>{coffee.region}</option>
     })
 
     return ( 
         <div id = "navbar-container">
-            <select class = "drop-down" name="field-1" id="field-1">
+            <select onChange={handleSelectChange} class = "drop-down" name="field-1" id="field-1">
                 {regionList}
             </select>
             <select class = "drop-down" name="field-2" id="field-2">
