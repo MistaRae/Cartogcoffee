@@ -2,13 +2,15 @@ import React from 'react';
 import { Marker, Popup, Tooltip } from 'react-leaflet';
 
 
-const MarkerList = ({ coffees, icon }) => {
+
+const MarkerList = ({coffees, icon}) => {
+    console.log('hello', {coffees})
     const markerNodes = coffees.map((coffee) => {
         return <Marker 
         position={[coffee.lat, coffee.long]} icon={icon}>
-        <div id= 'Popup'>
+        <div id= 'Popup'></div>
              <Popup>
-             
+             <div id= 'Popup'>
             <h3>{coffee.country}</h3>
             <p>
                 <ul>
@@ -20,11 +22,11 @@ const MarkerList = ({ coffees, icon }) => {
                     <li>Export Volume: {coffee.export_volume} tonnes/year</li>
                 </ul>
             </p>
-           
+            </div>
             </Popup>
             <Tooltip direction="bottom" offset={[0, 20]} opacity={0.9}>{coffee.country}</Tooltip>
 
-            </div>
+            
             
             
             
