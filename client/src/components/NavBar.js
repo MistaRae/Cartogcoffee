@@ -42,18 +42,30 @@ const NavBar = ({ coffees, onSelectRegion, onSelectTaste}) => {
 
     return (
         <div id="navbar-container">
-            <select onChange={handleSelectChange} class="drop-down" name="field-1" id="field-1">
+            <span>
+            <label htmlFor="region">Region: </label>
+            <select onChange={handleSelectChange} class="drop-down" name="region" id="region">
             <option value="All">All</option>
                 {regionList}
             </select>
-            <select onChange={handleTasteChange} class="drop-down" name="field-2" id="field-2">
+            </span>
+
+            <span>
+                <label htmlFor="taste">Taste Profile: </label>
+            <select onChange={handleTasteChange} class="drop-down" name="taste" id="taste">
             <option value="All">All</option>
                 {flavourMapping}
             </select>
-            <select class="drop-down" name="field-3" id="field-3">
-                <option value="option1">option 1</option>
-                <option value="option1">option 2</option>
+            </span>
+
+            <span>
+                <label htmlFor="type">Bean Type: </label>
+            <select class="drop-down" name="type" id="type">
+                <option value="All">All</option>
+                <option value="Arabica">Arabica</option>
+                <option value="Robusta">Robusta</option>
             </select>
+            </span>
         </div>
     )
 };
