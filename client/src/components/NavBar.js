@@ -38,6 +38,7 @@ const NavBar = ({ coffees, onSelectRegion, onSelectTaste}) => {
     return (
         <div id="navbar-container">
             <select onChange={handleSelectChange} class="drop-down" name="field-1" id="field-1">
+            <option value="All">All</option>
                 {regionList}
             </select>
             <select onChange={handleTasteChange} class="drop-down" name="field-2" id="field-2">

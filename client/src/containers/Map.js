@@ -11,8 +11,8 @@ import MarkerList from "../components/map_components/MarkerList"
 const Map = () => {
 
   const [coffees, setCoffees] = useState([]);
-  const [selectedRegion, setSelectedRegion] = useState([]);
-  const [selectedTaste, setSelectedTaste] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('All');
+  const [selectedTaste, setSelectedTaste] = useState('All');
   const [filteredCoffees, setFilteredCoffees] = useState([coffees])
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Map = () => {
 
   useEffect(() => {
     filterCoffees()
-  }, [selectedTaste])
+  }, [selectedTaste, coffees])
 
   const onSelectRegion = function (region) {
     setSelectedRegion(region)
@@ -36,6 +36,9 @@ const Map = () => {
 
   function FlyTo() {
     const map = useMap()
+    if (selectedRegion === "All") {
+      map.flyTo([0, 0], 0)
+    }
     if (selectedRegion === "Americas") {
       map.flyTo([-26, -60], 3.2)
     }
