@@ -51,18 +51,9 @@ const Map = () => {
   // INITIAL STATE
   const state = {
 
-    coffeeIcon: {
-      lat: 55.829120,
-      lng: -4.281100
-    },
-    coffeeIcon2: {
-      lat: 70.829120,
-      lng: -4.281100
-    },
-
     zoom: 2,
     lat: 0,
-    lon: -25
+    lon: 0
   }
 
   const coffeeIcon = L.icon({
@@ -75,7 +66,6 @@ const Map = () => {
   });
 
   const positionCenter = [state.lat, state.lon];
-  const positionCoffeeIcon = [state.coffeeIcon.lat, state.coffeeIcon.lng];
 
   // FILTER COFFEES
 
@@ -117,7 +107,7 @@ const Map = () => {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            <MarkerList coffees={filteredCoffees} icon={coffeeIcon} position={positionCoffeeIcon} />
+            <MarkerList coffees={filteredCoffees} icon={coffeeIcon} />
             <FlyTo />
           </MapContainer>
 

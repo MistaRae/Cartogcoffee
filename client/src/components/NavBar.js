@@ -61,7 +61,7 @@ const NavBar = ({ coffees, onSelectRegion, onSelectTaste}) => {
             <span>
                 <label htmlFor="type">Bean Type: </label>
             <select class="drop-down" name="type" id="type">
-                <option value="All">All</option>
+                <option value="Both">Both</option>
                 <option value="Arabica">Arabica</option>
                 <option value="Robusta">Robusta</option>
             </select>
