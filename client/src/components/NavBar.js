@@ -12,15 +12,14 @@ const NavBar = ({ coffees, onSelectRegion }) => {
         return <option value={index} key={index}>{coffee.region}</option>
     })
 
-    // foobar = foo.split(",").map(foo => foo.trim())
-
     const getFlavours = () => {
 
         let flavourList = []
-        const profileList = coffees.map((coffee, index) => {
+        coffees.map((coffee) => {
             const flavours = coffee.taste_profile.split(",").map(taste => taste.trim());
             flavourList.push(...flavours)
         });
+
         const flavourSet = new Set(flavourList);
         const flavourArray = Array.from(flavourSet);
         return flavourArray
@@ -28,9 +27,8 @@ const NavBar = ({ coffees, onSelectRegion }) => {
 
     const flavourMapping = getFlavours().map((flavour, index) => {
         return <option value={index} key={index}>{flavour}</option>
-    })
+    });
 
-    // return <option value={index} key={index}>{coffee.region}</option>
 
     return (
         <div id="navbar-container">
