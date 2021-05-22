@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import NavBar from '../components/NavBar'
 import L from 'leaflet';
-import { MapContainer, TileLayer, Rectangle, useMap} from 'react-leaflet';
+import { MapContainer, TileLayer, useMap} from 'react-leaflet';
 import coffeeCup from '../images/coffeecup.png';
 import coffeeShadow from '../images/coffeecup-shadow.png'
 import {getCoffees} from "../Services"
@@ -41,6 +41,7 @@ const Map = () => {
 
   function MyComponent() {
     const map = useMap()
+    map.flyTo([40.730610, -73.935242], 15)
     console.log('map center:', map.getCenter())
     return null
   }
@@ -89,6 +90,35 @@ const Map = () => {
 
     const blackOptions = { color: 'black' }
 
+
+    // function AnimateExample() {
+    //   const animateRef = useRef(false)
+    
+    //   return (
+    //     <>
+    //       <p>
+    //         <label>
+    //           <input
+    //             type="checkbox"
+    //             onChange={() => {
+    //               animateRef.current = !animateRef.current
+    //             }}
+    //           />
+    //           Animate panning
+    //         </label>
+    //       </p>
+    //       <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+    //         <TileLayer
+    //           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    //           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    //         />
+    //         <SetViewOnClick animateRef={animateRef} />
+    //       </MapContainer>
+    //     </>
+    //   )
+    // }
+    
+
 return(
 
         <>
@@ -106,7 +136,8 @@ return(
 
        <MarkerList coffees={coffees} icon={coffeeIcon} position={positionCoffeeIcon}/>
        {/* <Rectangle bounds={rectangle} pathOptions={blackOptions} /> */}
-      </MapContainer>
+       <MyComponent />
+       </MapContainer>
       
       </div> : null }
       </>
