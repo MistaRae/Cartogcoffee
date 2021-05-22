@@ -3,7 +3,6 @@ import { Marker, Popup } from 'react-leaflet';
 
 
 const MarkerList = ({coffees, icon}) => {
-    console.log('hello', {coffees})
     const markerNodes = coffees.map((coffee) => {
         return <Marker 
         position={[coffee.lat, coffee.long]} icon={icon}>

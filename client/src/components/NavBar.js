@@ -4,10 +4,8 @@ import React from 'react'
 const NavBar = ({coffees, onSelectRegion}) => {
 
     const handleSelectChange = function (event) {
-        let region
-        region = coffees[event.target.value];
-        onSelectRegion(region)
-
+        let regionObject = coffees[event.target.value];
+        onSelectRegion(regionObject.region)
     }
 
     const regionList = coffees.map((coffee, index) => {

@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import NavBar from '../components/NavBar'
 import L from 'leaflet';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import { MapContainer, TileLayer, useMap} from 'react-leaflet';
 import coffeeCup from '../images/coffeecup.png';
 import coffeeShadow from '../images/coffeecup-shadow.png'
 import {getCoffees} from "../Services"
 import MarkerList from "../components/map_components/MarkerList"
+
 
 const Map = () => {
 
@@ -21,7 +22,9 @@ const Map = () => {
     });
   }, [])
 
+
   const setTargetAmericas = (() => {
+    setSelectedRegion("Americas")
     setLatCenter(-5);
     setLongCenter(-80);
     setZoom(3);
@@ -34,6 +37,14 @@ const Map = () => {
     }
   }
 
+
+  function MyComponent() {
+    const map = useMap()
+    console.log('map center:', map.getCenter())
+    return null
+  }
+
+  // INITIAL STATE
   const state = {
 
       coffeeIcon: {
@@ -70,20 +81,26 @@ const Map = () => {
     const positionCoffeeIcon = [state.coffeeIcon.lat, state.coffeeIcon.lng];
     const positionCoffeeIcon2 = [state.coffeeIcon2.lat, state.coffeeIcon2.lng];
 
+
 return(
 
         <>
         {    coffees ?
         <div>
          <NavBar coffees={coffees} onSelectRegion={onSelectRegion}/>
+
+
         <MapContainer className="map" attributionControl={false} center={positionCenter} zoom={Zoom} >
+        <MyComponent />
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
        <MarkerList coffees={coffees} icon={coffeeIcon} position={positionCoffeeIcon}/>
-      </MapContainer></div> : null }
+      </MapContainer>
+      
+      </div> : null }
       </>
 
   )
