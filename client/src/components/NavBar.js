@@ -41,6 +41,7 @@ const NavBar = ({ coffees, onSelectRegion, onSelectTaste }) => {
                 {regionList}
             </select>
             <select onChange={handleTasteChange} class="drop-down" name="field-2" id="field-2">
+            <option value="All">All</option>
                 {flavourMapping}
             </select>
             <select class="drop-down" name="field-3" id="field-3">
