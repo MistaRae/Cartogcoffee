@@ -86,13 +86,6 @@
   padding-top: 20px;
 }
 
-/* .drop-down {
-  color:antiquewhite;
-  background-color:black;
-  border-color: black;
-  font-size: larger;
-} */
-
 .drop-down {
   color:antiquewhite;
   background-color:black;
@@ -101,39 +94,11 @@
 }
 
 .map {
-  height: 70vh;
+  height: 50vh;
   width: 70vh;
 }
-
-/* .class {
-  this is a class
-} */
-
-/* #id  {
-  this is an id
-} */
-
-/* h1  { 
-  this is a tag
-} */
 
 #property {
   background-color: rgba(62, 20, 20, 0.818);
   color: white;
 }
-
-/* #field {
-  default field
-} */
-
-/* #field:hover {
-  this is hover properties.
-} */
-
-/* #field:active {
-  is being clicked on
-} */
-
-/* #field:valid {
-  if you have a required field, this is the colour after filled out
-} */
