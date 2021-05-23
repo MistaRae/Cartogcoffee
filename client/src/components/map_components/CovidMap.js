@@ -6,9 +6,9 @@ import "./CovidMap.css"
 const CovidMap = ({ countries }) => {
     
     const mapStyle = {
-        fillColor: "white",
-        weight: 0.3,
-        color: "black",
+        fillColor: "rgb(240, 237, 230)",
+        weight: 0.6,
+        color: "rgb(162, 147, 173)",
         fillOpacity: 1
     };
 
