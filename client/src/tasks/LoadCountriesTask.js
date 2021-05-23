@@ -1,5 +1,6 @@
 import papa from "papaparse";
 import { features } from "../data/countries.json";
+import legendItems from "../entities/LegendItems";
 
 class LoadCountriesTask {
   covid19Dataurl =
@@ -29,19 +30,32 @@ class LoadCountriesTask {
       mapCountry.properties.confirmed = 0;
       mapCountry.properties.confirmedText = "0";
 
-      if(covidCountry != null) {
-          const confirmed = Number(covidCountry.Confirmed);
-          mapCountry.properties.confirmed = confirmed;
-          mapCountry.properties.confirmedText = this.#formatNumberWithCommas(confirmed);
+      if (covidCountry != null) {
+        const confirmed = Number(covidCountry.Confirmed);
+        mapCountry.properties.confirmed = confirmed;
+        mapCountry.properties.confirmedText =
+          this.#formatNumberWithCommas(confirmed);
       }
+
+      this.#setCountryColor(mapCountry);
     }
     this.setState(this.mapCountries);
   };
-  // can be stripped out later, change this.#formatNum... to confirmed on line 35;
-  #formatNumberWithCommas = (number) =>  {
+
+  #setCountryColor = ( mapCountry) => {
+    const legendItem = legendItems.find((legendItem) =>
+      legendItem.isFor(mapCountry.properties.confirmed)
+    );
+
+    if(legendItem != null) {
+        mapCountry.properties.color = legendItem.color;
+    }
+  };
+
+
+  #formatNumberWithCommas = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
-   
 }
 
 export default LoadCountriesTask;

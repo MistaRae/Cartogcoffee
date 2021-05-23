@@ -6,9 +6,11 @@ import "./CovidMap.css"
 const CovidMap = ({ countries }) => {
     
     const mapStyle = {
-        fillColor: "rgb(240, 237, 230)",
+        // fillColor: "rgb(240, 237, 230)",
+        fillColor: "white",
         weight: 0.6,
-        color: "rgb(162, 147, 173)",
+        // color: "rgb(162, 147, 173)",
+        color: "black",
         fillOpacity: 1
     };
 
@@ -18,13 +20,13 @@ const onEachCountry = (country, layer) =>  {
     const confirmedText = country.properties.confirmedText;
     layer.bindPopup(`${name} ${confirmedText}`);
 }
-
-    return ( <MapContainer style={{ height: "50vh"}} zoom={2} center={[20, 100]}>
+ 
+    return ( <MapContainer  attributionControl={false} style={{ height: "50vh"}} zoom={2} center={[20, 100]}>
             <GeoJSON data={countries} style={mapStyle} onEachFeature={onEachCountry} />
 
     </MapContainer>
     
-    );
+    ); 
 };
  
 export default CovidMap;

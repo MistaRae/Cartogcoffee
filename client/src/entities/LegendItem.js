@@ -7,5 +7,5 @@ class LegendItem{
 
     }
 }
-
+ 
 export default LegendItem;

@@ -20,7 +20,7 @@ const legendItems = [
   ),
   new LegendItem(
       "50,000 - 199,999",
-      "'d8aaaa",
+      "#d8aaaa",
       (cases) => 50_000 && cases < 200_000
   ),
   new LegendItem(
@@ -28,7 +28,7 @@ const legendItems = [
       "#ebd4d4",
       (cases) => cases > 0 && cases < 50_000
   ),
-  new LegendItem("No Data", "#a293ad", (cases) => true),
+  new LegendItem("No Data", "#ffffff", (cases) => true)
 ];
 
 export default legendItems;
