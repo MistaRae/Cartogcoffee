@@ -27,7 +27,7 @@ class LoadCountriesTask {
         (covidCountry) => covidCountry.ISO3 === mapCountry.properties.ISO_A3
       );
 
-      mapCountry.properties.confirmed = 0;
+      mapCountry.properties.confirmed = "No Data";
       mapCountry.properties.confirmedText = "No Data";
 
       if (covidCountry != null) {
