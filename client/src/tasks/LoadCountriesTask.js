@@ -28,6 +28,12 @@ class LoadCountriesTask {
 
       mapCountry.properties.confirmed = 0;
       mapCountry.properties.confirmedText = "0";
+
+      if(covidCountry != null) {
+          const confirmed = Number(covidCountry.Confirmed);
+          mapCountry.properties.confirmed = confirmed;
+          mapCountry.properties.confirmedText = confirmed;
+      }
     }
     this.setState(this.mapCountries);
   };
