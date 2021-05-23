@@ -12,9 +12,15 @@ const CovidMap = ({ countries }) => {
         fillOpacity: 1
     };
 
+const onEachCountry = (country, layer) =>  {
+    layer.options.fillColor = country.properties.color;
+    const name = country.properties.ADMIN;
+    const confirmedText = country.properties.confirmedText;
+    layer.bindPopup(`${name} ${confirmedText}`);
+}
 
     return ( <MapContainer style={{ height: "50vh"}} zoom={2} center={[20, 100]}>
-            <GeoJSON data={countries} style={mapStyle} />
+            <GeoJSON data={countries} style={mapStyle} onEachFeature={onEachCountry} />
 
     </MapContainer>
     
