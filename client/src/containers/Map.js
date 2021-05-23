@@ -44,18 +44,20 @@ const Map = () => {
     if (selectedRegion === "All") {
       map.flyTo(positionCenter, state.zoom)
     }
-    if (selectedRegion === "Americas") {
+    else if (selectedRegion === "Americas") {
       map.flyTo([-26, -60], 3.2)
     }
     else if (selectedRegion === "Africa") {
       map.flyTo([0, 13], 3.4)
+    }
+    else if (selectedRegion === "Asia") {
+      map.flyTo([0, 110], 4)
     }
     return null
   };
 
   // INITIAL STATE
   const state = {
-
     zoom: 2,
     lat: 0,
     lon: 0
