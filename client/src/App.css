@@ -97,3 +97,8 @@
   height: 70vh;
   width: 70vh;
 }
+
+#property {
+  background-color: rgba(62, 20, 20, 0.818);
+  color: white;
+}
