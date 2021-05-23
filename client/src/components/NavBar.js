@@ -24,7 +24,8 @@ const NavBar = ({ coffees, onSelectRegion, onSelectTaste, onSelectBean}) => {
         let flavourList = []
         coffees.map((coffee) => {
             const flavours = coffee.taste_profile.split(",").map(taste => taste.trim());
-            flavourList.push(...flavours)
+            flavourList.push(...flavours);
+            flavourList.sort();
         });
 
         const flavourSet = new Set(flavourList);
