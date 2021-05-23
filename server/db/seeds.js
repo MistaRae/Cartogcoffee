@@ -87,8 +87,8 @@ db.coffees.insertMany([
         bean_type: "Arabica",
         taste_profile: "Clean, Dark Fruits, Sweet",
         export_volume: "4,900,000 60kg bags",
-        lat: "3.6892782106631303",
-        long: "-73.49870224613231"
+        lat: "1.4769310297194203",
+        long: "32.39978242882856"
     },
     {
         region: "Africa",
