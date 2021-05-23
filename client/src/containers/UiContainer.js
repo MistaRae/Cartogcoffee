@@ -11,7 +11,7 @@ const UiContainer = () => {
         <div id = "Ui-Container">
             <Header />
             {/* OG MAP LEAVE ME IN */}
-            {/* <Map />  */}
+            <Map /> 
             <Covid19 />
             <Footer/>
         </div>

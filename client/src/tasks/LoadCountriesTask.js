@@ -37,6 +37,8 @@ class LoadCountriesTask {
     }
     this.setState(this.mapCountries);
   };
+
+   
 }
 
 export default LoadCountriesTask;
