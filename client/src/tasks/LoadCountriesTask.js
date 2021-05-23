@@ -28,7 +28,7 @@ class LoadCountriesTask {
       );
 
       mapCountry.properties.confirmed = 0;
-      mapCountry.properties.confirmedText = "0";
+      mapCountry.properties.confirmedText = "No Data";
 
       if (covidCountry != null) {
         const confirmed = Number(covidCountry.Confirmed);
@@ -48,6 +48,7 @@ class LoadCountriesTask {
     );
 
     if(legendItem != null) {
+
         mapCountry.properties.color = legendItem.color;
     }
   };
