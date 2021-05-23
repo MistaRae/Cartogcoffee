@@ -3,15 +3,16 @@ import React from 'react'
 import Map from './Map'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import MapChoro from './MapChoro'
+import Covid19 from '../components/Covid19'
 
 const UiContainer = () => {
 
     return(
         <div id = "Ui-Container">
             <Header />
-            {/* <Map /> */}
-            <MapChoro />
+            {/* OG MAP LEAVE ME IN */}
+            {/* <Map />  */}
+            <Covid19 />
             <Footer/>
         </div>
     )
