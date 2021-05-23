@@ -1,6 +1,7 @@
 import React from 'react';
 import {MapContainer, GeoJSON} from "react-leaflet";
-import "leaflet/dist/leaflet.css"
+import "leaflet/dist/leaflet.css";
+import "./CovidMap.css"
 
 const CovidMap = ({ countries }) => {
     console.log(countries);
