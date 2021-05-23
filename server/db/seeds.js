@@ -296,8 +296,8 @@ db.coffees.insertMany([
         bean_type: "Robusta",
         taste_profile: "Full-bodied, Earthy, Little-Acidic",
         export_volume: "350,000 60kg bags",
-        lat: "3.6892782106631303",
-        long: "-73.49870224613231"
+        lat: "19.017129778246996",
+        long: "-72.2967966918215"
     },
     {
         region: "Americas",
@@ -373,8 +373,8 @@ db.coffees.insertMany([
         bean_type: "Robusta",
         taste_profile: "Sweet, Heavy-bodied, Clean",
         export_volume: "3,800,000 60kg bags",
-        lat: "3.6892782106631303",
-        long: "-73.49870224613231"
+        lat: "-10.363186935873044",
+        long: "-75.5360491821185"
     },
     {
         region: "Americas",
