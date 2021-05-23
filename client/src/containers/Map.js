@@ -42,21 +42,23 @@ const Map = () => {
   function FlyTo() {
     const map = useMap()
     if (selectedRegion === "All") {
-      map.flyTo(positionCenter, state.zoom)
+      map.flyTo([0, 0], 3)
     }
-    if (selectedRegion === "Americas") {
-      map.flyTo([-26, -60], 3.2)
+    else if (selectedRegion === "Americas") {
+      map.flyTo([-16, -60], 3.5)
     }
     else if (selectedRegion === "Africa") {
-      map.flyTo([0, 13], 3.4)
+      map.flyTo([0, 13], 3.9)
+    }
+    else if (selectedRegion === "Asia") {
+      map.flyTo([15, 110], 4.2)
     }
     return null
   };
 
   // INITIAL STATE
   const state = {
-
-    zoom: 2,
+    zoom: 3.3,
     lat: 0,
     lon: 0
   };
