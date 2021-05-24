@@ -10,10 +10,13 @@ const Covid19 = ({coffees}) => {
   const [countries, setCountries] = useState([]);
   const legendItemsInReverse = [...legendItems].reverse();
 
+  // setCountries(coffees)
+
   const load = ()  =>  {
     const loadCountriesTask = new LoadCountriesTask();
     loadCountriesTask.load(setCountries);
   };
+  console.log('countries', countries)
 
   useEffect(load, []);
 

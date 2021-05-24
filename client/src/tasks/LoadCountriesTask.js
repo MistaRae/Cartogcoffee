@@ -11,7 +11,7 @@ class LoadCountriesTask {
 
   load = (setState) => {
     this.setState = setState;
-
+    // SENDS STUFF TO PROCESSCOVID DATA. REFACTOR TO SEND COFFEES
     papa.parse(this.covid19Dataurl, {
       download: true,
       header: true,
@@ -23,6 +23,8 @@ class LoadCountriesTask {
   #processCovidData = (covidCountries) => {
     for (let i = 0; i < this.mapCountries.length; i++) {
       const mapCountry = this.mapCountries[i];
+      // FINDS MATCHES BETWEEN COVID COUNTRIES AND GEO
+      // MUST REFACTOR TO MATCHES WITH COFFEES
       const covidCountry = covidCountries.find(
         (covidCountry) => covidCountry.ISO3 === mapCountry.properties.ISO_A3
       );
@@ -30,6 +32,8 @@ class LoadCountriesTask {
       mapCountry.properties.confirmed = "No Data";
       mapCountry.properties.confirmedText = "No Data";
 
+    
+      //CHANGED CONFIRMED TEXT TO EXPORT VOLUME
       if (covidCountry != null) {
         const confirmed = Number(covidCountry.Confirmed);
         mapCountry.properties.confirmed = confirmed;
