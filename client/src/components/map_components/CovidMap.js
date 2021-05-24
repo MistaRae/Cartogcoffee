@@ -3,7 +3,7 @@ import {MapContainer, GeoJSON} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./CovidMap.css"
 
-const CovidMap = ({ countries }) => {
+const CovidMap = ({ countries, coffees }) => {
     
     const mapStyle = {
         // fillColor: "rgb(240, 237, 230)",
@@ -18,6 +18,8 @@ const onEachCountry = (country, layer) =>  {
     layer.options.fillColor = country.properties.color;
     const name = country.properties.ADMIN;
     const confirmedText = country.properties.confirmedText;
+    const details = coffees.find((country) => country.name == name)
+    console.log('details', details)
     layer.bindPopup(`${name} ${confirmedText}`);
 }
  

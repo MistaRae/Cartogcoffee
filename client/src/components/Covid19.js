@@ -22,7 +22,7 @@ const Covid19 = ({coffees}) => {
         <Loading />
       ) : (
         <div>
-          <CovidMap countries={countries}/>
+          <CovidMap countries={countries} coffees={coffees} />
           <Legend legendItems={legendItemsInReverse}/>
         </div>
       )}
