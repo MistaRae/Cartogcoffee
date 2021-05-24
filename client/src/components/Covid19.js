@@ -33,33 +33,33 @@ class LoadCountriesTask {
         (covidCountry) => covidCountry.ISO3 === mapCountry.properties.ISO_A3
       );
 
-      mapCountry.properties.confirmed = "No Data";
-      mapCountry.properties.confirmedText = "No Data";
+      // mapCountry.properties.confirmed = "No Data";
+      // mapCountry.properties.confirmedText = "No Data";
 
     
       //CHANGED CONFIRMED TEXT TO EXPORT VOLUME
-      if (covidCountry != null) {
-        const confirmed = Number(covidCountry.Confirmed);
-        mapCountry.properties.confirmed = confirmed;
-        mapCountry.properties.confirmedText =
-          confirmed;
-      }
+      // if (covidCountry != null) {
+      //   const confirmed = Number(covidCountry.Confirmed);
+      //   mapCountry.properties.confirmed = confirmed;
+      //   mapCountry.properties.confirmedText =
+      //     confirmed;
+      // }
 
-      this.#setCountryColor(mapCountry);
+      // this.#setCountryColor(mapCountry);
     }
     this.setState(this.mapCountries);
   };
 
-  #setCountryColor = ( mapCountry) => {
-    const legendItem = legendItems.find((legendItem) =>
-      legendItem.isFor(mapCountry.properties.confirmed)
-    );
+  // #setCountryColor = ( mapCountry) => {
+  //   const legendItem = legendItems.find((legendItem) =>
+  //     legendItem.isFor(mapCountry.properties.confirmed)
+  //   );
 
-    if(legendItem != null) {
+  //   if(legendItem != null) {
 
-        mapCountry.properties.color = legendItem.color;
-    }
-  };
+  //       mapCountry.properties.color = legendItem.color;
+  //   }
+  // };
 
 }
 
