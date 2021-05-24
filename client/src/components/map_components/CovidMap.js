@@ -37,7 +37,12 @@ function legend(stat, comparisonArray) {
         return "#c57f7f"
     }
 
+}
 
+function stripNumber(numberString) {
+    // REGEX to remove string and convert to number
+    const number = Number(numberString.replace(/[^\d.-]/g, ''))
+    return number
 }
 
 const onEachCountry = (country, layer) =>  {
@@ -48,7 +53,9 @@ const onEachCountry = (country, layer) =>  {
     const countryObj = coffees.find((coffee) => coffee.country == name)
     if (countryObj != null){
     layer.bindPopup(`${name} ${countryObj.export_volume}`);
-    const foundColor = legend(countryObj.export_volume)
+    const exportVol = stripNumber(countryObj.export_volume)
+    console.log('export', exportVol)
+    const foundColor = legend(exportVol)
     layer.options.fillColor = foundColor;
 }
 }
