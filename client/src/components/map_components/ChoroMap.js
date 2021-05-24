@@ -45,6 +45,8 @@ function stripNumber(numberString) {
     return number
 }
 
+const exportLegend = [10_000_000, 5_000_000, 2_000_000, 500_000]
+
 const onEachCountry = (country, layer) =>  {
     // DIRECTLY CHANGE COLOURS BASED ON KEY
     // layer.options.fillColor = "red";
@@ -54,7 +56,7 @@ const onEachCountry = (country, layer) =>  {
     if (countryObj != null){
     layer.bindPopup(`${name} ${countryObj.export_volume}`);
     const exportVol = stripNumber(countryObj.export_volume)
-    const foundColor = legend(exportVol, [10_000_000, 5_000_000, 2_000_000, 500_000])
+    const foundColor = legend(exportVol, exportLegend)
     layer.options.fillColor = foundColor;
 }
 }
