@@ -55,7 +55,7 @@ const Choro = ({coffees, legend}) => {
       ) : (
         <div>
           <ChoroMap countries={countries} coffees={coffees} />
-          <Legend legendItems={legendItemsInReverse}/>
+          <Legend legend={legend} legendItems={legendItemsInReverse}/>
         </div>
       )}
     </div>

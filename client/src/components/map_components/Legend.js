@@ -1,6 +1,6 @@
 import React from "react";
 
-const Legend = ({ legendItems }) => {
+const Legend = ({ legend, legendItems }) => {
   return (
     <div
       style={{
@@ -8,21 +8,13 @@ const Legend = ({ legendItems }) => {
         alignItems: "stretch",
       }}
     >
-      {legendItems.map((item) => (
-        <div key={item.title}
-        style={{
-            backgroundColor: item.color,
-            flex:1,
-            display:"flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: item.textColor,
-            height: "5vh",
-            fontSize: "1.2em"
-        }}>
-          <span>{item.title}</span>
-        </div>
-      ))}
+      <span> {legend[4]}</span>
+      <span>{legend[3]}</span>
+      <span>{legend[2]}</span>
+      <span>{legend[1]}</span>
+      <span>{legend[0]}</span>
+      <span> {legend[5]}</span>
+
     </div>
   );
 };

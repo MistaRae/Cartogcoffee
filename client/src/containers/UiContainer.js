@@ -8,15 +8,16 @@ import { getCoffees } from "../Services"
 
 const UiContainer = () => {
     const [coffees, setCoffees] = useState([]);
-    const [legend, setLegend] = useState(exportLegend);
+    const [legend, setLegend] = useState([]);
 
     useEffect(() => {
         getCoffees().then((allCoffees) => {
           setCoffees(allCoffees);
+          setLegend(exportLegend)
         });
       }, []);
 
-    const exportLegend = [10_000_000, 5_000_000, 2_000_000, 500_000]    
+    const exportLegend = [10_000_000, 5_000_000, 2_000_000, 500_000, 'No Data', '60kg bags / year']    
       
     return(
         <div id = "Ui-Container">
