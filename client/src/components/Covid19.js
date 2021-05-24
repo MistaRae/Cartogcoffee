@@ -4,6 +4,8 @@ import CovidMap from "./map_components/CovidMap";
 import Legend from "./map_components/Legend";
 import LoadCountriesTask from "../tasks/LoadCountriesTask";
 import legendItems from "../entities/LegendItems";
+import papa from "papaparse";
+import { features } from "../data/countries.json";
 
 
 const Covid19 = ({coffees}) => {
