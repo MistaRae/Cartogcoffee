@@ -21,19 +21,19 @@ const CovidMap = ({ countries, coffees }) => {
 //      stat >= 50_000 && stat < 200,000              = "50,000 - 199,999"
 //      stat >= 0 && stat < 50_000            = "0 - 49,999"
 function legend(stat, comparisonArray) {
-    if (stat >= 1_000_000) {
+    if (stat >= 300_000_000) {
         return "#741f1f"
     }
-    else  if (stat >= 500_000 && stat < 1_000_000) {
+    else  if (stat >= 200_000_000 && stat < 300_000_000) {
         return "#9c2929"
     }
-    else  if (stat >= 200_000 && stat < 500_000) {
+    else  if (stat >= 50_000_000 && stat < 200_000_000) {
         return "#9c2929"
     }
-    else if (stat >= 50_000 && stat < 200_000 ) {
+    else if (stat >= 1000_000_000 && stat < 500_000_000 ) {
         return "#c57f7f"
     }
-    else if (stat >= 0 && stat < 50_000 ) {
+    else if (stat >= 0 && stat < 1000_000_000 ) {
         return "#c57f7f"
     }
 
@@ -42,12 +42,14 @@ function legend(stat, comparisonArray) {
 
 const onEachCountry = (country, layer) =>  {
     // DIRECTLY CHANGE COLOURS BASED ON KEY
-    layer.options.fillColor = "red";
+    // layer.options.fillColor = "red";
     const name = country.properties.ADMIN;
     // const confirmedText = country.properties.confirmedText;
     const countryObj = coffees.find((coffee) => coffee.country == name)
     if (countryObj != null){
     layer.bindPopup(`${name} ${countryObj.export_volume}`);
+    const foundColor = legend(countryObj.export_volume)
+    layer.options.fillColor = foundColor;
 }
 }
  
