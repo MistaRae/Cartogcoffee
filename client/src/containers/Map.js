@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect} from 'react';
 import NavBar from '../components/NavBar'
 import L from 'leaflet';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
@@ -42,7 +42,7 @@ const Map = ({coffees}) => {
   function FlyTo() {
     const map = useMap()
     if (selectedRegion === "All") {
-      map.flyTo([0, 0], 3)
+      map.flyTo([10, 0], 3)
     }
     else if (selectedRegion === "Americas") {
       map.flyTo([-16, -60], 3.5)

@@ -2,6 +2,7 @@ import React from 'react';
 import {MapContainer, GeoJSON, TileLayer} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./ChoroMap.css"
+import NavBarCountry from "../NavBarCountry"
 
 const ChoroMap = ({ countries, coffees }) => {
     console.log(countries)
@@ -60,15 +61,21 @@ const onEachCountry = (country, layer) =>  {
     layer.options.fillColor = foundColor;
 }
 }
+
+
  
-    return ( <MapContainer className="map"  attributionControl={false} zoom={2} center={[20, 100]}>
+    return ( 
+    <div>
+    <NavBarCountry />
+    <MapContainer className="map"  attributionControl={false} zoom={2.5} center={[10, 0]}>
+
                     <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <GeoJSON data={countries} style={mapStyle} onEachFeature={onEachCountry} />
-
     </MapContainer>
+    </div>
     
     ); 
 };

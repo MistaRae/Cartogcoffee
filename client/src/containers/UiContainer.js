@@ -9,6 +9,7 @@ import { getCoffees } from "../Services"
 const UiContainer = () => {
     const [coffees, setCoffees] = useState([]);
     const [legend, setLegend] = useState([]);
+    const [viewFarm, setViewFarm] = useState(true)
 
     useEffect(() => {
         getCoffees().then((allCoffees) => {
@@ -17,16 +18,29 @@ const UiContainer = () => {
         });
       }, []);
 
+    const onCountryClick = () => {
+      setViewFarm(false)
+    }
+
+    const onFarmClick = () => {
+      setViewFarm(true)
+    }
+
     const exportLegend = [10_000_000, 5_000_000, 2_000_000, 500_000, 'No Data', '60kg bags / year']    
       
     return(
+      viewFarm ? 
         <div id = "Ui-Container">
             <Header />
-            {/* OG MAP LEAVE ME IN */}
-            {/* <Map coffees={coffees} />  */}
-            <Choro legend={legend} coffees={coffees}/>
-            <Footer/>
-        </div>
+            <Map coffees={coffees} />
+            <Footer onCountryClick={onCountryClick}/>
+        </div> :
+
+<div id = "Ui-Container">
+<Header />
+<Choro legend={legend} coffees={coffees}/>
+<Footer onCountryClick={onCountryClick} onFarmClick={onFarmClick}/>
+</div>
     )
 }
 

@@ -6,15 +6,10 @@ import UiContainer from './containers/UiContainer'
 
 
 const App = () => {
-
-
-
-
    
     return (
       <div className="App">
         <UiContainer />
-      
       </div>
     );
   
