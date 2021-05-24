@@ -27,39 +27,10 @@ class LoadCountriesTask {
   #processCovidData = (covidCountries) => {
     for (let i = 0; i < this.mapCountries.length; i++) {
       const mapCountry = this.mapCountries[i];
-      // FINDS MATCHES BETWEEN COVID COUNTRIES AND GEO
-      // MUST REFACTOR TO MATCHES WITH COFFEES
-      const covidCountry = covidCountries.find(
-        (covidCountry) => covidCountry.ISO3 === mapCountry.properties.ISO_A3
-      );
 
-      // mapCountry.properties.confirmed = "No Data";
-      // mapCountry.properties.confirmedText = "No Data";
-
-    
-      //CHANGED CONFIRMED TEXT TO EXPORT VOLUME
-      // if (covidCountry != null) {
-      //   const confirmed = Number(covidCountry.Confirmed);
-      //   mapCountry.properties.confirmed = confirmed;
-      //   mapCountry.properties.confirmedText =
-      //     confirmed;
-      // }
-
-      // this.#setCountryColor(mapCountry);
     }
     this.setState(this.mapCountries);
   };
-
-  // #setCountryColor = ( mapCountry) => {
-  //   const legendItem = legendItems.find((legendItem) =>
-  //     legendItem.isFor(mapCountry.properties.confirmed)
-  //   );
-
-  //   if(legendItem != null) {
-
-  //       mapCountry.properties.color = legendItem.color;
-  //   }
-  // };
 
 }
 
@@ -68,7 +39,9 @@ const Covid19 = ({coffees}) => {
   const [countries, setCountries] = useState([]);
   const legendItemsInReverse = [...legendItems].reverse();
 
+  console.log('new countries list', countries)
   // setCountries(coffees)
+
 
   const load = ()  =>  {
     const loadCountriesTask = new LoadCountriesTask();
