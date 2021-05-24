@@ -3,14 +3,10 @@ import React from 'react'
 
 const NavBar = ({ coffees, onSelectRegion, onSelectTaste, onSelectBean}) => {
 
-    const handleSelectChange = function (event) {
-        if (event.target.value !== "All") {
-        let regionObject = coffees[event.target.value];
-        onSelectRegion(regionObject.region)
-    }
-        else {
-            onSelectRegion("All")
-        }
+
+    const handleRegionChange = function (event) {
+        let region = event.target.value;
+        onSelectRegion(region)
     };
 
     const handleTasteChange = function (event) {
@@ -23,16 +19,13 @@ const NavBar = ({ coffees, onSelectRegion, onSelectTaste, onSelectBean}) => {
         onSelectBean(bean)
     };
 
-    const regionList = coffees.map((coffee, index) => {
-        return <option value={index} key={index}>{coffee.region}</option>
-    });
-
     const getFlavours = () => {
 
         let flavourList = []
         coffees.map((coffee) => {
             const flavours = coffee.taste_profile.split(",").map(taste => taste.trim());
-            flavourList.push(...flavours)
+            flavourList.push(...flavours);
+            flavourList.sort();
         });
 
         const flavourSet = new Set(flavourList);
@@ -49,9 +42,11 @@ const NavBar = ({ coffees, onSelectRegion, onSelectTaste, onSelectBean}) => {
         <div id="navbar-container">
             <span>
             <label htmlFor="region">Region: </label>
-            <select onChange={handleSelectChange} class="drop-down" name="region" id="region">
+            <select onChange={handleRegionChange} class="drop-down" name="region" id="region">
             <option value="All">All</option>
-                {regionList}
+            <option value="Africa">Africa</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
             </select>
             </span>
 
