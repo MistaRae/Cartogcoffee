@@ -42,7 +42,7 @@ const Map = () => {
   function FlyTo() {
     const map = useMap()
     if (selectedRegion === "All") {
-      map.flyTo([0, 0], 3)
+      map.flyTo([10, 0], 3)
     }
     else if (selectedRegion === "Americas") {
       map.flyTo([-16, -60], 3.5)

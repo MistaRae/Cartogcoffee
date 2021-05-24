@@ -93,6 +93,7 @@
   font-size: larger;
 }
 
+/* DO NOT adjust as it messes up zoom/fly settings */
 .map {
   height: 70vh;
 }
