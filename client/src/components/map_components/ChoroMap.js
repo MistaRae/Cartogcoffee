@@ -28,13 +28,13 @@ function legend(stat, comparisonArray) {
         return "#9c2929"
     }
     else  if (stat >= comparisonArray[2] && stat < comparisonArray[1]) {
-        return "#c57f7f"
+        return "#d75e5e"
     }
     else if (stat >= comparisonArray[3] && stat < comparisonArray[2] ) {
-        return "#d88383"
+        return "#c57979"
     }
     else if (stat >= 0 && stat < comparisonArray[3] ) {
-        return "#ecb4b4"
+        return "#f1b1b1"
     }
 
 }
