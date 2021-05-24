@@ -21,7 +21,7 @@ const onEachCountry = (country, layer) =>  {
     layer.bindPopup(`${name} ${confirmedText}`);
 }
  
-    return ( <MapContainer  attributionControl={false} style={{ height: "50vh"}} zoom={2} center={[20, 100]}>
+    return ( <MapContainer className="map"  attributionControl={false} zoom={2} center={[20, 100]}>
             <GeoJSON data={countries} style={mapStyle} onEachFeature={onEachCountry} />
 
     </MapContainer>
