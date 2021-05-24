@@ -11,7 +11,21 @@ db.coffees.insertMany([
         taste_profile: "Complex, Berries, Juicy",
         export_volume: "351,000 60kg bags",
         lat: "-3.3153364990452148",
-        long: "29.90861957595555" 
+        long: "29.90861957595555",
+        farm_info: [{
+            bean_variety: "Bourbon, Jackson, Mibirzi",
+            harvest_period: "March - July",
+            harvest_regions: "Ngozi Province",
+            farm_lat: "-2.878723907934651",
+            farm_long: "29.919791793157742"
+        },
+        {
+            bean_variety: "Bourbon, Jackson, Mibirzi",
+            harvest_period: "March - July",
+            harvest_regions: "Kayanza Province",
+            farm_lat: "-2.9243719968427206",
+            farm_long: "29.624138117890137"
+        }] 
     },
     {
         region: "Africa",
@@ -44,7 +58,21 @@ db.coffees.insertMany([
         taste_profile: "Bright, Fruity, Acidic",
         export_volume: "783,000 60kg bags",
         lat: "0.5496074930576166",
-        long: "38.09205686621277"
+        long: "38.09205686621277",
+        farm_info: [{
+            bean_variety: "Ruiru, Batian, Kent",
+            harvest_period: "March – July",
+            harvest_regions: "Nyeri",
+            farm_lat: "-0.4001158471389174",
+            farm_long: "36.953814258432494"
+        },
+        {
+            bean_variety: "Ruiru, Batian, Kent",
+            harvest_period: "March – July",
+            harvest_regions: "Kiambu",
+            farm_lat: "-1.1251080029711478",
+            farm_long: "36.81726956469809"
+        }]
     },
     {
         region: "Africa",
