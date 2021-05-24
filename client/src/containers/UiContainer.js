@@ -39,7 +39,7 @@ const UiContainer = () => {
 <div id = "Ui-Container">
 <Header />
 <Choro legend={legend} coffees={coffees}/>
-<Footer onCountryClick={onCountryClick} onFarmClick={onFarmClick}/>
+<Footer onCountryClick={onCountryClick} onFarmClick={onFarmClick} />
 </div>
     )
 }
