@@ -54,7 +54,6 @@ const onEachCountry = (country, layer) =>  {
     if (countryObj != null){
     layer.bindPopup(`${name} ${countryObj.export_volume}`);
     const exportVol = stripNumber(countryObj.export_volume)
-    console.log('export', exportVol)
     const foundColor = legend(exportVol)
     layer.options.fillColor = foundColor;
 }

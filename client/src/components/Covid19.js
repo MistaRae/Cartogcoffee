@@ -18,7 +18,6 @@ class LoadCountriesTask {
     // SENDS STUFF TO PROCESSCOVID DATA. REFACTOR TO SEND COFFEES
     papa.parse(this.covid19Dataurl, {
       download: true,
-      header: true,
       complete: (result) => this.#processCovidData(result.data),
     });
   };
@@ -39,7 +38,6 @@ const Covid19 = ({coffees}) => {
   const [countries, setCountries] = useState([]);
   const legendItemsInReverse = [...legendItems].reverse();
 
-  console.log('new countries list', countries)
   // setCountries(coffees)
 
 
