@@ -1,5 +1,5 @@
 import React from 'react';
-import {MapContainer, GeoJSON} from "react-leaflet";
+import {MapContainer, GeoJSON, TileLayer} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./CovidMap.css"
 
@@ -10,7 +10,7 @@ const CovidMap = ({ countries, coffees }) => {
         fillColor: "white",
         weight: 0.6,
         // color: "rgb(162, 147, 173)",
-        color: "black",
+        color: "white",
         fillOpacity: 1
     };
 
@@ -25,6 +25,10 @@ const onEachCountry = (country, layer) =>  {
 }
  
     return ( <MapContainer className="map"  attributionControl={false} zoom={2} center={[20, 100]}>
+                    <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
             <GeoJSON data={countries} style={mapStyle} onEachFeature={onEachCountry} />
 
     </MapContainer>
