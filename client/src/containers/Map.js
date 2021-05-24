@@ -143,7 +143,7 @@ const Map = ({coffees}) => {
             <MarkerList coffees={filteredCoffees} icon={coffeeIcon} />
             <FlyTo />
           </MapContainer>
-
+          
         </div> : null}
     </>
 

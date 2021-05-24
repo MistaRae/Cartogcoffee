@@ -3,7 +3,7 @@ import {MapContainer, GeoJSON, TileLayer} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./ChoroMap.css"
 
-const CovidMap = ({ countries, coffees }) => {
+const ChoroMap = ({ countries, coffees }) => {
     console.log(countries)
     const mapStyle = {
         // fillColor: "rgb(240, 237, 230)",
@@ -73,4 +73,4 @@ const onEachCountry = (country, layer) =>  {
     ); 
 };
  
-export default CovidMap;
+export default ChoroMap;
