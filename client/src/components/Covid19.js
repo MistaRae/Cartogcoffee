@@ -10,7 +10,7 @@ class LoadCountriesTask {
   covid19Dataurl =
     "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/web-data/data/cases_country.csv";
 
-  setState = null;
+  setState = features;
   mapCountries = features;
 
   load = (setState) => {

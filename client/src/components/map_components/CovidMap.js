@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 import "./ChoroMap.css"
 
 const CovidMap = ({ countries, coffees }) => {
-    
+    console.log(countries)
     const mapStyle = {
         // fillColor: "rgb(240, 237, 230)",
         fillColor: "white",
