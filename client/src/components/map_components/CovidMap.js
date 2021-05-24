@@ -17,7 +17,7 @@ const CovidMap = ({ countries, coffees }) => {
 const onEachCountry = (country, layer) =>  {
     layer.options.fillColor = country.properties.color;
     const name = country.properties.ADMIN;
-    const confirmedText = country.properties.confirmedText;
+    // const confirmedText = country.properties.confirmedText;
     const countryObj = coffees.find((coffee) => coffee.country == name)
     if (countryObj != null){
     layer.bindPopup(`${name} ${countryObj.export_volume}`);
