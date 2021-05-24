@@ -34,7 +34,7 @@ const NavBar = ({ coffees, onSelectRegion, onSelectTaste, onSelectBean}) => {
     };
 
     const flavourMapping = getFlavours().map((flavour, index) => {
-        return <option value={flavour} key={index}>{flavour}</option>
+        return <option value={flavour} key={index}>Flavour: {flavour}</option>
     });
 
 
@@ -55,7 +55,7 @@ const NavBar = ({ coffees, onSelectRegion, onSelectTaste, onSelectBean}) => {
                 {/* <label htmlFor="taste">Taste Profile: </label> */}
             <select onChange={handleTasteChange} class="drop-down" name="taste" id="taste">
             <option value="" disabled selected hidden>CHOOSE A FLAVOUR</option>
-            <option value="All">All</option>
+            <option value="All">Flavour: All</option>
                 {flavourMapping}
             </select>
             </span>
