@@ -150,7 +150,7 @@ db.coffees.insertMany([
         number_of_farms: "25",
         production_volume: "250,000",
         bean_type: "Robusta",
-        taste_profile: "Full-bodied, Light Florals, Low-Acidic",
+        taste_profile: "Full-bodied, Light, Floral, Low-Acidic",
         export_volume: "200,000 60kg bags",
         lat: "12.350588523376205",
         long: "123.2674486988937"
