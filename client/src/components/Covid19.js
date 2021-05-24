@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
-import CovidMap from "./map_components/CovidMap";
+import ChoroMap from "./map_components/ChoroMap";
 import Legend from "./map_components/Legend";
 import legendItems from "../entities/LegendItems";
 import papa from "papaparse";
@@ -84,7 +84,7 @@ const Covid19 = ({coffees}) => {
         <Loading />
       ) : (
         <div>
-          <CovidMap countries={countries} coffees={coffees} />
+          <ChoroMap countries={countries} coffees={coffees} />
           <Legend legendItems={legendItemsInReverse}/>
         </div>
       )}
