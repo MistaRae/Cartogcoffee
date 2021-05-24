@@ -18,9 +18,10 @@ const onEachCountry = (country, layer) =>  {
     layer.options.fillColor = country.properties.color;
     const name = country.properties.ADMIN;
     const confirmedText = country.properties.confirmedText;
-    const details = coffees.find((country) => country.name == name)
-    console.log('details', details)
-    layer.bindPopup(`${name} ${confirmedText}`);
+    const countryObj = coffees.find((coffee) => coffee.country == name)
+    if (countryObj != null){
+    layer.bindPopup(`${name} ${countryObj.export_volume}`);
+}
 }
  
     return ( <MapContainer className="map"  attributionControl={false} zoom={2} center={[20, 100]}>
