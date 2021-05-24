@@ -1,6 +1,9 @@
 import React from 'react'
 
 const Footer = () => {
+
+    
+
     return (
         <div id="footer">
             <div id = "socials">
@@ -9,7 +12,7 @@ const Footer = () => {
                 <img class = "social-image" src="https://i.pinimg.com/474x/ee/4b/ec/ee4bec98e284c251b885707a470ad3b8.jpg" alt="" />
             </div>
 
-            <div id = "copyright"><p>©cartogcoffee.com</p></div>
+            <div id = "copyright" ><p>©cartogcoffee.com</p></div>
             
             {/* <h1>©cartogcoffee.com</h1> */}
             <div id = "footer-names">
