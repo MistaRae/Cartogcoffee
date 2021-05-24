@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Map from './Map'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import Covid19 from '../components/Covid19'
+import Choro from '../components/Choro'
 import { getCoffees } from "../Services"
 
 const UiContainer = () => {
@@ -21,7 +21,7 @@ const UiContainer = () => {
             <Header />
             {/* OG MAP LEAVE ME IN */}
             {/* <Map coffees={coffees} />  */}
-            <Covid19 coffees={coffees}/>
+            <Choro coffees={coffees}/>
             <Footer/>
         </div>
     )

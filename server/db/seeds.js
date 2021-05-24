@@ -8,9 +8,23 @@ db.coffees.insertMany([
         production_volume: "420,000",
         bean_type: "Arabica",
         taste_profile: "Complex, Berries, Juicy",
-        export_volume: "351,000 60kg bags",
+        export_volume: "351,000",
         lat: "-3.3153364990452148",
-        long: "29.90861957595555" 
+        long: "29.90861957595555",
+        farm_info: [{
+            bean_variety: "Bourbon, Jackson, Mibirzi",
+            harvest_period: "March - July",
+            harvest_regions: "Ngozi Province",
+            farm_lat: "-2.878723907934651",
+            farm_long: "29.919791793157742"
+        },
+        {
+            bean_variety: "Bourbon, Jackson, Mibirzi",
+            harvest_period: "March - July",
+            harvest_regions: "Kayanza Province",
+            farm_lat: "-2.9243719968427206",
+            farm_long: "29.624138117890137"
+        }] 
     },
     {
         region: "Africa",
@@ -19,7 +33,7 @@ db.coffees.insertMany([
         production_volume: "400,000",
         bean_type: "Robusta & Arabica",
         taste_profile: "Full-bodied, Fruity, Sweet",
-        export_volume: "335,000 60kg bags",
+        export_volume: "335,000",
         lat: "-2.7771225722426878",
         long: "23.361105261250994"
     },
@@ -30,7 +44,7 @@ db.coffees.insertMany([
         production_volume: "7,500,000",
         bean_type: "Arabica",
         taste_profile: "Complex, Citrus, Floral",
-        export_volume: "6,600,000 60kg bags",
+        export_volume: "6,600,000",
         lat: "8.664708964800257",
         long: "39.77204324951715"
     },
@@ -41,9 +55,23 @@ db.coffees.insertMany([
         production_volume: "900,000",
         bean_type: "Arabica",
         taste_profile: "Bright, Fruity, Acidic",
-        export_volume: "783,000 60kg bags",
+        export_volume: "783,000",
         lat: "0.5496074930576166",
-        long: "38.09205686621277"
+        long: "38.09205686621277",
+        farm_info: [{
+            bean_variety: "Ruiru, Batian, Kent",
+            harvest_period: "March – July",
+            harvest_regions: "Nyeri",
+            farm_lat: "-0.4001158471389174",
+            farm_long: "36.953814258432494"
+        },
+        {
+            bean_variety: "Ruiru, Batian, Kent",
+            harvest_period: "March – July",
+            harvest_regions: "Kiambu",
+            farm_lat: "-1.1251080029711478",
+            farm_long: "36.81726956469809"
+        }]
     },
     {
         region: "Africa",
@@ -52,7 +80,7 @@ db.coffees.insertMany([
         production_volume: "23,000",
         bean_type: "Robusta",
         taste_profile: "Clean, Subtle Fruits, Sweet",
-        export_volume: "18,000 60kg bags",
+        export_volume: "18,000",
         lat: "-13.505789427258163",
         long: "34.084623525329924"
     },
@@ -63,18 +91,18 @@ db.coffees.insertMany([
         production_volume: "300,000",
         bean_type: "Arabica",
         taste_profile: "Fresh, Fruity",
-        export_volume: "220,000 60kg bags",
+        export_volume: "220,000",
         lat: "-2.0039524247242557",
         long: "29.913239424035705"
     },
     {
         region: "Africa",
-        country: "Tanzania",
+        country: "United Republic of Tanzania",
         number_of_farms: "9",
         production_volume: "1,000,000",
         bean_type: "Arabica",
         taste_profile: "Bright, Berries, Complex",
-        export_volume: "870,000 60kg bags",
+        export_volume: "870,000",
         lat: "-6.484360704330531",
         long: "34.99812028433937"
     },
@@ -85,7 +113,7 @@ db.coffees.insertMany([
         production_volume: "7,000,000",
         bean_type: "Arabica",
         taste_profile: "Clean, Dark Fruits, Sweet",
-        export_volume: "4,900,000 60kg bags",
+        export_volume: "4,900,000",
         lat: "1.4769310297194203",
         long: "32.39978242882856"
     },
@@ -96,7 +124,7 @@ db.coffees.insertMany([
         production_volume: "5,000",
         bean_type: "Robusta",
         taste_profile: "Bright, Floral, Clean",
-        export_volume: "2,000 60kg bags",
+        export_volume: "2,000",
         lat: "-13.464843258915668",
         long: " 27.665493473402282"
     },
@@ -107,7 +135,7 @@ db.coffees.insertMany([
         production_volume: "3,000,000",
         bean_type: "Arabica",
         taste_profile: "Woody, Fruity, Low-Acidic",
-        export_volume: "2,200,000 60kg bags",
+        export_volume: "2,200,000",
         lat: "36.492201115265566",
         long: "103.59232869086705"
     },
@@ -118,7 +146,7 @@ db.coffees.insertMany([
         production_volume: "7,000,000",
         bean_type: "Robusta",
         taste_profile: "Creamy, Heavy, Low-Acidic",
-        export_volume: "5,333,000 60kg bags",
+        export_volume: "5,333,000",
         lat: "22.871938775218965",
         long: "79.52857464930946"
     },
@@ -129,7 +157,7 @@ db.coffees.insertMany([
         production_volume: "13,000,000",
         bean_type: "Robusta",
         taste_profile: "Earthy, Spicy, Heavy",
-        export_volume: "11,491,000 60kg bags",
+        export_volume: "11,491,000",
         lat: "-4.250710151859882",
         long: "122.42910756028397"
     },
@@ -140,7 +168,7 @@ db.coffees.insertMany([
         production_volume: "1,300,000",
         bean_type: "Robusta",
         taste_profile: "Buttery, Sweet, Complex",
-        export_volume: "1,171,000 60kg bags",
+        export_volume: "1,171,000",
         lat: "-6.263585848675199",
         long: "144.48965260614656"
     },
@@ -150,8 +178,8 @@ db.coffees.insertMany([
         number_of_farms: "25",
         production_volume: "250,000",
         bean_type: "Robusta",
-        taste_profile: "Full-bodied, Light Florals, Low-Acidic",
-        export_volume: "200,000 60kg bags",
+        taste_profile: "Full-bodied, Light, Floral, Low-Acidic",
+        export_volume: "200,000",
         lat: "12.350588523376205",
         long: "123.2674486988937"
     },
@@ -161,8 +189,8 @@ db.coffees.insertMany([
         number_of_farms: "12",
         production_volume: "1,000,000",
         bean_type: "Robusta",
-        taste_profile: "Clean, Chocolate/Spice, Low-Acidic",
-        export_volume: "664,000 60kg bags",
+        taste_profile: "Clean, Chocolate, Spicy, Low-Acidic",
+        export_volume: "664,000",
         lat: "15.343605698545852",
         long: "101.03732946749474"
     },
@@ -173,7 +201,7 @@ db.coffees.insertMany([
         production_volume: "30,000,000",
         bean_type: "Robusta",
         taste_profile: "Flat, Woody, Lacks Character",
-        export_volume: "26,700,000 60kg bags",
+        export_volume: "26,700,000",
         lat: "14.473061152085139",
         long: "108.24436011992793"
     },
@@ -184,7 +212,7 @@ db.coffees.insertMany([
         production_volume: "200,000",
         bean_type: "Robusta",
         taste_profile: "Wild, Pungent, Complex",
-        export_volume: "125,000 60kg bags",
+        export_volume: "125,000",
         lat: "15.861352577643292",
         long: "47.43424176791278"
     },
@@ -195,7 +223,7 @@ db.coffees.insertMany([
         production_volume: "120,000",
         bean_type: "Robusta",
         taste_profile: "Very Sweet, Very Clean",
-        export_volume: "81,000 60kg bags",
+        export_volume: "81,000",
         lat: "-16.762940729634494",
         long: "-64.39672193098544"
     },
@@ -205,8 +233,8 @@ db.coffees.insertMany([
         number_of_farms: "17",
         production_volume: "75,000,000",
         bean_type: "Arabica",
-        taste_profile: "Heavy-bodied, Chocolate/Nut, Low-Acidic",
-        export_volume: "55,000,000 60kg bags",
+        taste_profile: "Heavy-bodied, Chocolate, Nutty, Low-Acidic",
+        export_volume: "55,000,000",
         lat: "-8.706404101001437",
         long: "-54.797289692838966"
     },
@@ -217,7 +245,7 @@ db.coffees.insertMany([
         production_volume: "20,000,000",
         bean_type: "Robusta",
         taste_profile: "Chocolate, Jammy, Sweet",
-        export_volume: "14,232,000 60kg bags",
+        export_volume: "14,232,000",
         lat: "3.386827325291564",
         long: "-73.43010064791014"
     },
@@ -228,7 +256,7 @@ db.coffees.insertMany([
         production_volume: "2,000,000",
         bean_type: "Robusta",
         taste_profile: "Sweet, Light-bodied, Clean",
-        export_volume: "1,486,000 60kg bags",
+        export_volume: "1,486,000",
         lat: "10.35691199461996",
         long: "-84.09744059648081"
     },
@@ -239,7 +267,7 @@ db.coffees.insertMany([
         production_volume: "120,000",
         bean_type: "Robusta",
         taste_profile: "Heavy-bodied, Low-Acidic",
-        export_volume: "100,000 60kg bags",
+        export_volume: "100,000",
         lat: "21.639069487995698",
         long: "-78.80582482755595"
     },
@@ -250,7 +278,7 @@ db.coffees.insertMany([
         production_volume: "500,000",
         bean_type: "Robusta",
         taste_profile: "Mild, Clean, Low-Acidic",
-        export_volume: "400,000 60kg bags",
+        export_volume: "400,000",
         lat: "18.910994483988063",
         long: "-70.19110438238667"
     },
@@ -261,7 +289,7 @@ db.coffees.insertMany([
         production_volume: "900,000",
         bean_type: "Robusta",
         taste_profile: "Sweet, Complex, Pleasant-Acidic",
-        export_volume: "600,000 60kg bags",
+        export_volume: "600,000",
         lat: "-1.5181777416780116",
         long: "-78.30285716604827"
     },
@@ -272,7 +300,7 @@ db.coffees.insertMany([
         production_volume: "1,000,000",
         bean_type: "Robusta",
         taste_profile: "Sweet, Balanced, Soft-Acidic",
-        export_volume: "623,000 60kg bags",
+        export_volume: "623,000",
         lat: "13.709464011218802",
         long: "-88.6479432160325"
     },
@@ -283,7 +311,7 @@ db.coffees.insertMany([
         production_volume: "5,000,000",
         bean_type: "Robusta",
         taste_profile: "Light, Very Sweet, Complex",
-        export_volume: "3,500,000 60kg bags",
+        export_volume: "3,500,000",
         lat: "15.686159878416388",
         long: "-90.32674908751716"
     },
@@ -294,7 +322,7 @@ db.coffees.insertMany([
         production_volume: "700,000",
         bean_type: "Robusta",
         taste_profile: "Full-bodied, Earthy, Little-Acidic",
-        export_volume: "350,000 60kg bags",
+        export_volume: "350,000",
         lat: "19.017129778246996",
         long: "-72.2967966918215"
     },
@@ -305,7 +333,7 @@ db.coffees.insertMany([
         production_volume: "90,000",
         bean_type: "Robusta",
         taste_profile: "Mid-bodied, Low-Acidic",
-        export_volume: "40,909 60kg bags",
+        export_volume: "40,909",
         lat: "19.547778326483122",
         long: "-155.640653296222"
     },
@@ -316,7 +344,7 @@ db.coffees.insertMany([
         production_volume: "8,000,000",
         bean_type: "Robusta",
         taste_profile: "Fruity, Lively, Acidic",
-        export_volume: "5,934,000 60kg bags",
+        export_volume: "5,934,000",
         lat: "14.841811143837116",
         long: "-87.04703884461142"
     },
@@ -327,7 +355,7 @@ db.coffees.insertMany([
         production_volume: "80,000",
         bean_type: "Robusta",
         taste_profile: "Clean, Sweet, Juicy",
-        export_volume: "27,000 60kg bags",
+        export_volume: "27,000",
         lat: "18.147414770655722",
         long: "-77.3042083333355"
     },
@@ -338,7 +366,7 @@ db.coffees.insertMany([
         production_volume: "5,000,000",
         bean_type: "Robusta",
         taste_profile: "Light-bodied, Delicate, Caramel",
-        export_volume: "3,100,000 60kg bags",
+        export_volume: "3,100,000",
         lat: "23.817734435506384",
         long: "-102.41268650866029"
     },
@@ -349,7 +377,7 @@ db.coffees.insertMany([
         production_volume: "2,000,000",
         bean_type: "Robusta",
         taste_profile: "Complex, Fruity, Clean-Acidic",
-        export_volume: "1,500,000 60kg bags",
+        export_volume: "1,500,000",
         lat: "12.8248945729852",
         long: "-85.01034291533938"
     },
@@ -359,8 +387,8 @@ db.coffees.insertMany([
         number_of_farms: "6",
         production_volume: "300,000",
         bean_type: "Robusta",
-        taste_profile: "Citrusy, Light-bodied, Complex",
-        export_volume: "115,000 60kg bags",
+        taste_profile: "Citrus, Light-bodied, Complex",
+        export_volume: "115,000",
         lat: "8.566969027940486",
         long: "-80.09727977139507"
     },
@@ -371,7 +399,7 @@ db.coffees.insertMany([
         production_volume: "5,000,000",
         bean_type: "Robusta",
         taste_profile: "Sweet, Heavy-bodied, Clean",
-        export_volume: "3,800,000 60kg bags",
+        export_volume: "3,800,000",
         lat: "-10.363186935873044",
         long: "-75.5360491821185"
     },
@@ -382,7 +410,7 @@ db.coffees.insertMany([
         production_volume: "1,000,000",
         bean_type: "Robusta",
         taste_profile: "Sweet, Rich, Low-Acidic",
-        export_volume: "400,000 60kg bags",
+        export_volume: "400,000",
         lat: "7.094946610980019",
         long: "-66.25506276936846"
     }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
-import CovidMap from "./map_components/CovidMap";
+import CovidMap from "./map_components/ChoroMap";
 import Legend from "./map_components/Legend";
 import legendItems from "../entities/LegendItems";
 import papa from "papaparse";
@@ -10,7 +10,7 @@ class LoadCountriesTask {
   covid19Dataurl =
     "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/web-data/data/cases_country.csv";
 
-  setState = features;
+  setState = null;
   mapCountries = features;
 
   load = (setState) => {
@@ -34,7 +34,7 @@ class LoadCountriesTask {
 }
 
 
-const Covid19 = ({coffees}) => {
+const Choro = ({coffees}) => {
   const [countries, setCountries] = useState([]);
   const legendItemsInReverse = [...legendItems].reverse();
 
@@ -62,4 +62,4 @@ const Covid19 = ({coffees}) => {
   );
 };
 
-export default Covid19;
+export default Choro;
