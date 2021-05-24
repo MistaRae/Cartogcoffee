@@ -1,4 +1,3 @@
-import React from 'react';
 import papa from "papaparse";
 import { features } from "../data/countries.json";
 import legendItems from "../entities/LegendItems";
