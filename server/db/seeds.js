@@ -98,7 +98,7 @@ db.coffees.insertMany([
     },
     {
         region: "Africa",
-        country: "Tanzania",
+        country: "United Republic of Tanzania",
         number_of_farms: "9",
         production_volume: "1,000,000",
         bean_type: "Arabica",
