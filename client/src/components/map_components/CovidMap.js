@@ -1,7 +1,7 @@
 import React from 'react';
 import {MapContainer, GeoJSON, TileLayer} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import "./CovidMap.css"
+import "./ChoroMap.css"
 
 const CovidMap = ({ countries, coffees }) => {
     

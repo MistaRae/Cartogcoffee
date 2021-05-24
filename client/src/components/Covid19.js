@@ -74,7 +74,6 @@ const Covid19 = ({coffees}) => {
     const loadCountriesTask = new LoadCountriesTask();
     loadCountriesTask.load(setCountries);
   };
-  console.log('countries', countries)
 
   useEffect(load, []);
 
