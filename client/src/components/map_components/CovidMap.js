@@ -20,20 +20,21 @@ const CovidMap = ({ countries, coffees }) => {
 //      stat >= 200_000 && stat < 500,000             = "200,000 - 499,999"
 //      stat >= 50_000 && stat < 200,000              = "50,000 - 199,999"
 //      stat >= 0 && stat < 50_000            = "0 - 49,999"
+// EXAMPLE ARRAY [1_000_000, 500_000, 200_000, 50_000]
 function legend(stat, comparisonArray) {
-    if (stat >= 300_000_000) {
+    if (stat >= comparisonArray[0]) {
         return "#741f1f"
     }
-    else  if (stat >= 200_000_000 && stat < 300_000_000) {
+    else  if (stat >= comparisonArray[1] && stat < comparisonArray[0]) {
         return "#9c2929"
     }
-    else  if (stat >= 50_000_000 && stat < 200_000_000) {
+    else  if (stat >= comparisonArray[2] && stat < comparisonArray[1]) {
         return "#9c2929"
     }
-    else if (stat >= 1000_000_000 && stat < 500_000_000 ) {
+    else if (stat >= comparisonArray[3] && stat < comparisonArray[2] ) {
         return "#c57f7f"
     }
-    else if (stat >= 0 && stat < 1000_000_000 ) {
+    else if (stat >= 0 && stat < comparisonArray[3] ) {
         return "#c57f7f"
     }
 
@@ -55,7 +56,7 @@ const onEachCountry = (country, layer) =>  {
     layer.bindPopup(`${name} ${countryObj.export_volume}`);
     const exportVol = stripNumber(countryObj.export_volume)
     console.log('export', exportVol)
-    const foundColor = legend(exportVol)
+    const foundColor = legend(exportVol, [300_000_000, 200_000_000, 50_000_000, 1_000_000])
     layer.options.fillColor = foundColor;
 }
 }
