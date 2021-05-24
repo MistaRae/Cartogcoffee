@@ -1,15 +1,11 @@
 import React from 'react'
 
 const Footer = () => {
-
-<<<<<<< HEAD
-    
-=======
     const handleFooterClick = () => {
         window.location = 'https://github.com/MistaRae/Cartogcoffee'
     }
 
->>>>>>> 9c00578 (fade in working)
+
 
     return (
         <div id="footer">
@@ -18,15 +14,9 @@ const Footer = () => {
                 <img class = "social-image" src="https://image.freepik.com/free-vector/instagram-icon_1057-2227.jpg" alt="" />
                 <img class = "social-image" src="https://i.pinimg.com/474x/ee/4b/ec/ee4bec98e284c251b885707a470ad3b8.jpg" alt="" /> */}
             </div>
-
-<<<<<<< HEAD
-            <div id = "copyright" ><p>©cartogcoffee.com</p></div>
             
-            {/* <h1>©cartogcoffee.com</h1> */}
-=======
             <div id = "copyright" onClick = {handleFooterClick}><p>©cartogcoffee.com</p></div>
-        
->>>>>>> 9c00578 (fade in working)
+    
             <div id = "footer-names">
                 <p>Mark Rae</p>
                 <p>Dan Callus</p>
