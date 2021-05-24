@@ -1,6 +1,5 @@
 use coffee_facts;
 db.dropDatabase();
-
 db.coffees.insertMany([
     {
         region: "Africa",
