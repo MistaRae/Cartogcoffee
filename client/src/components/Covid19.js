@@ -5,7 +5,7 @@ import Legend from "./map_components/Legend";
 import LoadCountriesTask from "../tasks/LoadCountriesTask";
 import legendItems from "../entities/LegendItems";
 
-const Covid19 = () => {
+const Covid19 = ({coffees}) => {
   const [countries, setCountries] = useState([]);
   const legendItemsInReverse = [...legendItems].reverse();
 

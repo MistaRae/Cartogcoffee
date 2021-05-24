@@ -4,23 +4,23 @@ import L from 'leaflet';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import coffeeCup from '../images/coffeecup.png';
 import coffeeShadow from '../images/coffeecup-shadow.png'
-import { getCoffees } from "../Services"
+// import { getCoffees } from "../Services"
 import MarkerList from "../components/map_components/MarkerList"
 
 
-const Map = () => {
+const Map = ({coffees}) => {
 
-  const [coffees, setCoffees] = useState([]);
+  // const [coffees, setCoffees] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [selectedTaste, setSelectedTaste] = useState('All');
   const [selectedBean, setSelectedBean] = useState('Both');
   const [filteredCoffees, setFilteredCoffees] = useState([coffees])
 
-  useEffect(() => {
-    getCoffees().then((allCoffees) => {
-      setCoffees(allCoffees);
-    });
-  }, []);
+  // useEffect(() => {
+  //   getCoffees().then((allCoffees) => {
+  //     setCoffees(allCoffees);
+  //   });
+  // }, []);
 
   useEffect(() => {
     filterCoffees()
