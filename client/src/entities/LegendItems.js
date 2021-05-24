@@ -23,6 +23,7 @@ const legendItems = [
       "#d8aaaa",
       (cases) => 50_000 && cases < 200_000
   ),
+  
   new LegendItem(
       "0 - 49,999",
       "#ebd4d4",
