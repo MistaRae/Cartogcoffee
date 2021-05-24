@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 import ChoroMap from "./map_components/ChoroMap";
 import Legend from "./map_components/Legend";
-import legendItems from "../entities/LegendItems";
 import papa from "papaparse";
 import { features } from "../data/countries.json";
 
@@ -36,9 +35,6 @@ class LoadCountriesTask {
 
 const Choro = ({coffees, legend}) => {
   const [countries, setCountries] = useState([]);
-  const legendItemsInReverse = [...legendItems].reverse();
-
-  // setCountries(coffees)
 
 
   const load = ()  =>  {
@@ -55,7 +51,7 @@ const Choro = ({coffees, legend}) => {
       ) : (
         <div>
           <ChoroMap countries={countries} coffees={coffees} />
-          <Legend legend={legend} legendItems={legendItemsInReverse}/>
+          <Legend legend={legend}/>
         </div>
       )}
     </div>
