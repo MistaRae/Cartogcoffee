@@ -17,7 +17,7 @@ const Legend = ({ legend}) => {
       <span style={{backgroundColor: "#ffffff", padding: "0 5% 0 5%"}}> 
       {legend[4]}
       </span>
-      <span style={{backgroundColor: "#d88383", padding: "0 5% 0 5%"}}>0 - 
+      <span style={{backgroundColor: "#d88383", padding: "0 5% 0 5%"}}>0 -{'\u00A0'}
         {formatNumber(legend[3])}
         </span>
       <span style={{backgroundColor: "#c57f7f", padding: "0 5% 0 5%"}}>
