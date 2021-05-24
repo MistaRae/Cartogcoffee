@@ -8,9 +8,9 @@ const UiContainer = () => {
 
     return(
         <div id = "Ui-Container">
-            <Header />
+            {/* <Header /> */}
             <Map />
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     )
 }
