@@ -4,29 +4,26 @@ import "leaflet/dist/leaflet.css";
 import "./ChoroMap.css"
 import NavBarCountry from "../NavBarCountry"
 
+// from Choro
 const ChoroMap = ({ countries, coffees, onChangeLegend}) => {
 
-    const [selectedStat, setSelectedStat] = useState([]);
 
     useEffect(() => {
         onEachCountry()
-      }, [onChangeLegend])
+      }, [])
 
     const onProducersClick = function () {
         console.log('test')
-        setSelectedStat('Producers')
         onChangeLegend('Producers') 
     }
     
     const onExportersClick = function () {
         console.log('test')
-        setSelectedStat('Exporters')
         onChangeLegend('Exporters') 
     }
 
     const onFarmsClick = function () {
         console.log('test')
-        setSelectedStat('Farms')
         onChangeLegend('Farms') 
     }
 
@@ -90,6 +87,7 @@ const onEachCountry = (country, layer) =>  {
     const exportVol = stripNumber(countryObj.export_volume)
     const foundColor = legend(exportVol, [10_000_000, 5_000_000, 2_000_000, 500_000])
     layer.options.fillColor = foundColor;
+    console.log('layer:', layer.options.fillColor)
 }
 }
 }
@@ -108,7 +106,7 @@ const onEachCountry = (country, layer) =>  {
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             /> */}
-            <GeoJSON data={countries} style={mapStyle} onEachFeature={onEachCountry} />
+            <GeoJSON data={countries} onEachFeature={onEachCountry}  style={mapStyle} />
     </MapContainer>
     </div>
     

@@ -6,7 +6,7 @@ import { features } from "../data/countries.json";
 
 
 
-
+// from UiContainer
 const Choro = ({coffees, legend, onChangeLegend}) => {
   const [countries, setCountries] = useState([]);
 
