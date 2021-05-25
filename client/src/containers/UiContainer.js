@@ -27,6 +27,17 @@ const UiContainer = () => {
     setViewFarm(true);
   };
 
+  const onChangeLegend = (category) => {
+    setLegend([
+      5_000_000,
+      2_000_000,
+      1_000_000,
+      100_000,
+      "No Data",
+      "60kg bags / year",
+    ])
+  }
+
   const exportLegend = [
     10_000_000,
     5_000_000,
@@ -45,7 +56,7 @@ const UiContainer = () => {
   ) : (
     <>
       <div id="Ui-Container">
-        <Choro legend={legend} coffees={coffees} />
+        <Choro legend={legend} coffees={coffees} onChangeLegend={onChangeLegend}/>
       </div>
       <div>
         <NavBarBottom

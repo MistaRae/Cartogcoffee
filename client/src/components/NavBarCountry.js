@@ -26,7 +26,7 @@ const NavBarCountry = ({onProducersClick, onExportersClick, onFarmsClick}) => {
             </span>
 
             <span>
-            <button  onClick={handleFarmsClick} className = "button">TOP CONSUMERS</button>
+            <button  onClick={handleFarmsClick} className = "button">TOP FARMS</button>
             </span>
 
         </div>

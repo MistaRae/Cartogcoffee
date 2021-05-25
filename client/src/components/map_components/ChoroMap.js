@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 import "./ChoroMap.css"
 import NavBarCountry from "../NavBarCountry"
 
-const ChoroMap = ({ countries, coffees}) => {
+const ChoroMap = ({ countries, coffees, onChangeLegend}) => {
 
     const [selectedStat, setSelectedStat] = useState('Producers');
 
@@ -19,7 +19,8 @@ const ChoroMap = ({ countries, coffees}) => {
         setSelectedStat('Exporters') }
 
     const onFarmsClick = function () {
-        setSelectedStat('Farms') }
+        setSelectedStat('Farms')
+        onChangeLegend() }
 
     const mapStyle = {
         // fillColor: "rgb(240, 237, 230)",

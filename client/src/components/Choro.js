@@ -37,7 +37,7 @@ class LoadCountriesTask {
 // END OF OLD DEAD CODE THAT NEEDS TO STAY IN PLACE.
 
 
-const Choro = ({coffees, legend}) => {
+const Choro = ({coffees, legend, onChangeLegend}) => {
   const [countries, setCountries] = useState([]);
 
 
@@ -54,7 +54,7 @@ const Choro = ({coffees, legend}) => {
         <Loading />
       ) : (
         <div>
-          <ChoroMap countries={countries} coffees={coffees} />
+          <ChoroMap countries={countries} coffees={coffees} onChangeLegend={onChangeLegend}/>
           <Legend legend={legend}/>
         </div>
       )}
