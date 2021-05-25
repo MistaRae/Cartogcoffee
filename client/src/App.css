@@ -56,7 +56,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 36.82px;
+  /* margin-top: 36.82px; */
   color: antiquewhite;
   background-image: url(https://images.unsplash.com/photo-1551610290-e153ec567dd8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1513&q=80);
   background-position-x: center;
@@ -79,7 +79,7 @@ body {
 
 #copyright {
   font-weight: bold;
-  font-size: 20pt;
+  font-size: 15pt;
   padding: 0;
   margin: 0;
 }
@@ -164,7 +164,7 @@ body {
   justify-content: center;
   text-shadow: snow;
   font-weight: bold;
-  background:antiquewhite;
+  /* background:antiquewhite; */
   background-size: unset;
   color: lightslategray;
   border-radius: 0%;
@@ -172,7 +172,7 @@ body {
 }
 
 #popup > h3 {
-  color: blue;
+  color: darkgrey ;
   margin-bottom: 2px;
   font-size: x-large;
   text-align: center;
@@ -180,7 +180,7 @@ body {
 }
 
 #region-popup {
-  color: red;
+  /* color: red; */
 }
 
 .navButtons {
@@ -210,3 +210,25 @@ margin-bottom: 40px;
 
 }
 
+#nav-bar-bottom {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.button { 
+  background-color: black;
+  color: antiquewhite;
+  font-weight: bold;
+  border-style: none;
+}
+.button:hover {
+  color: white;
+  text-decoration: underline;
+  cursor:pointer;
+}
+
+.button-highlighted {
+  border-style: solid;
+  border-color: antiquewhite;
+  border-width: 2px;
+}
