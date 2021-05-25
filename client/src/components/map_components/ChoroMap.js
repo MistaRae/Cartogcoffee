@@ -62,12 +62,11 @@ const onEachCountry = (country, layer) =>  {
 }
 }
 
-
  
     return ( 
     <div>
     <NavBarCountry />
-    <MapContainer className="map"  attributionControl={false} zoom={3} center={[0, 0]}>
+    <MapContainer className="map"  attributionControl={false} zoom={2.5} center={[10, 10]}>
 
                     {/* <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
