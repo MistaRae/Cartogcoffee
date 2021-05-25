@@ -18,15 +18,15 @@ const NavBarCountry = ({onProducersClick, onExportersClick, onFarmsClick}) => {
     return (
         <div id="navbar-container">
             <span>
-            <button className = "button">TOP PRODUCERS</button>
+            <button onClick={handleProducersClick} className = "button">TOP PRODUCERS</button>
             </span>
 
             <span>
-        <button className = "button">TOP EXPORTERS</button>
+        <button onClick={handleExportersClick} className = "button">TOP EXPORTERS</button>
             </span>
 
             <span>
-            <button className = "button">TOP CONSUMERS</button>
+            <button  onClick={handleFarmsClick} className = "button">TOP CONSUMERS</button>
             </span>
 
         </div>
