@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Choro from '../components/Choro'
 import { getCoffees } from "../Services"
+import NavBarBottom from '../components/NavBarBottom'
 
 const UiContainer = () => {
     const [coffees, setCoffees] = useState([]);
@@ -31,16 +32,21 @@ const UiContainer = () => {
     return(
       viewFarm ? 
         <div id = "Ui-Container">
-            <Header />
             <Map coffees={coffees} />
             <Footer onCountryClick={onCountryClick}/>
         </div> :
 
+<div>
 <div id = "Ui-Container">
 <Header />
 <Choro legend={legend} coffees={coffees}/>
 <Footer onCountryClick={onCountryClick} onFarmClick={onFarmClick} />
 </div>
+            {/* <Header /> */}
+            <Map />
+            {/* <Footer/> */}
+            <NavBarBottom />
+        </div>
     )
 }
 

@@ -56,11 +56,12 @@ const Map = ({coffees}) => {
     return null
   };
 
+  
   // INITIAL STATE
   const state = {
     zoom: 3.3,
     lat: 0,
-    lon: 0
+    lon: 0,
   };
 
   const coffeeIcon = L.icon({
@@ -119,6 +120,7 @@ const Map = ({coffees}) => {
     }))
     setFilteredCoffees(filteredByRegion)
   };
+
 
 
   return (
