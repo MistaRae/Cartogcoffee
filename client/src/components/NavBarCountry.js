@@ -1,21 +1,32 @@
 import React from 'react'
 
 
-const NavBarCountry = ({}) => {
+const NavBarCountry = ({onProducersClick, onExportersClick, onFarmsClick}) => {
 
+    const handleProducersClick = function () {
+        onProducersClick()
+    };
+
+    const handleExportersClick = function () {
+        onExportersClick()
+    };
+
+    const handleFarmsClick = function () {
+        onFarmsClick()
+    };
 
     return (
         <div id="navbar-container">
             <span>
-            <button>Top Producers</button>
+            <button onClick = {handleProducersClick}>Top Producers</button>
             </span>
 
             <span>
-        <button>Top Exporters</button>
+        <button onClick = {handleExportersClick}>Top Exporters</button>
             </span>
 
             <span>
-            <button>Top Consumers</button>
+            <button onClick = {handleFarmsClick}>Number of Farms</button>
             </span>
 
         </div>
