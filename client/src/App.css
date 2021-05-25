@@ -10,7 +10,6 @@ html, body {
 }
 
 body {
-  
   background-color: black;
   animation: fadeInAnimation ease-in 3.5s;
   animation-iteration-count: 1;
@@ -44,10 +43,12 @@ body {
   cursor:pointer;
   }
 
-
-
-
-
+#navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+  }
 
 #Ui-Container {
   flex: 1 0 auto;
@@ -58,16 +59,7 @@ body {
   border-width: 20px;
 }
 
-#navbar-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  /* padding-top: 20px; */
-  background-color: black;
-}
-
 #map-container {
-  
   align-content: center;
   margin-top:20px;
   margin-left: auto;
@@ -79,8 +71,6 @@ body {
   background-repeat: no-repeat;
   padding: 100px;  
 }
-
-
 
 .drop-down {
   margin-bottom: 5%;
@@ -113,7 +103,6 @@ body {
   background-size: unset;
   color: lightslategray;
   border-radius: 0%;
-
 }
 
 #popup > h3 {
@@ -121,7 +110,6 @@ body {
   margin-bottom: 2px;
   font-size: x-large;
   text-align: center;
- 
 }
 
 #region-popup {
@@ -133,27 +121,49 @@ margin-bottom: 40px;
 }
 
 #prep {
-  display:flex;
-  padding-top: 36.82px;
+  /* display:flex; */
+  /* padding-top: 36.82px; */
   flex: 1 0 auto;
-  color: antiquewhite;
+  align-items: start;
+  background-color: black;
+  border-style: solid;
+  border-width: 20px;
   /* background-image: src="https://images.unsplash.com/photo-1455134168668-4066045897c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80"  */
+}
+#prep-content-container {
+  display: flex;
+  color:antiquewhite
+}
+
+#prep-content {
+  padding-left: 20px
+}
+
+#prep-content > h1 {
+  text-align: center;
+  text-decoration: underline;
 }
 
 #prep-image {
-  
   /* align-content: center; */
-  max-width: 100%;
-  animation-name: shrinkPrepImage;
+  /* max-width: 50%;
+  clip-path: circle(40%); */
+  display: flex;
+  justify-content: left;
+
+  /* clip-path: polygon(0% 30%, 30% 100%, 0% 100%, 0% 70%); */
+  /* animation-name: shrinkPrepImage;
   animation-duration: 2.5s;
   animation-timing-function: ease-in;
-  animation-fill-mode: forwards
+  animation-fill-mode: forwards; */
+  padding-bottom: 18px;
 }
 
-@keyframes shrinkPrepImage {
+/* @keyframes shrinkPrepImage {
   0%    {max-width: 100%;}
-  100%  {max-width: 35%; align-content:flex-end;}
-}
+  100%   {max-width: 35%;}
+
+} */
 
 #nav-bar-bottom {
   margin-top: 18px;

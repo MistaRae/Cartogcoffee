@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 // import Map from '../components/Map'
 import Map from "./Map";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Choro from "../components/Choro";
 import { getCoffees } from "../Services";
@@ -76,19 +75,21 @@ const UiContainer = () => {
       <Footer />
     </div>
   ) : (
-    <>
+    <div>
       <div id="Ui-Container">
-        <Choro legend={legend} coffees={coffees} onChangeLegend={onChangeLegend}/>
+            <Choro  
+              legend={legend} 
+              coffees={coffees} 
+              onChangeLegend={onChangeLegend}/>
       </div>
       <div>
-        <NavBarBottom
-          onCountryClick={onCountryClick}
-          onFarmClick={onFarmClick}
-          viewFarm={viewFarm}
-        />
-              <Footer />
+            <NavBarBottom
+              onCountryClick={onCountryClick}
+              onFarmClick={onFarmClick}
+              viewFarm={viewFarm}/>
+            <Footer />
       </div>
-    </>
+    </div>
   );
 };
 

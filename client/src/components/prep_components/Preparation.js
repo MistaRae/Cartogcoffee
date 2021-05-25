@@ -6,7 +6,23 @@ const Preparation = () => {
 
     return(
         <div id = "prep">
-            {/* <img id = "prep-image" src="https://images.unsplash.com/photo-1455134168668-4066045897c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80" alt="" /> */}
+            <div id ="prep-content-container">
+                <img id = "prep-image" src="https://i.imgur.com/ZeA4YK5.gif" alt="" />
+                <div id="prep-content">
+                    <h2>SOME HELPFUL HOW TO GUIDES:</h2>
+                    <ul>
+                        <li>
+                            <a href="https://www.ncausa.org/About-Coffee/How-to-Brew-Coffee">NCA - HOW TO BREW COFFEE</a>
+                        </li>
+                        <li>
+                            <a href="https://www.eatingwell.com/article/41595/9-rules-for-how-to-make-a-perfect-cup-of-coffee/"> EATING WELL - 9 RULES FOR A PERFECT COFFEE</a>
+                        </li>
+                        <li>
+                            <a href=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <Footer/>
         </div>
     )
