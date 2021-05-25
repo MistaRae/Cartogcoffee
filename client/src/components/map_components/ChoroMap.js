@@ -77,11 +77,13 @@ const exportLegend = [10_000_000, 5_000_000, 2_000_000, 500_000]
 
 const onEachCountry = (country, layer) =>  {
     if (country)  {
+    // layer.options.color = "white";
+    // layer.weight = "0.6";
     // DIRECTLY CHANGE COLOURS BASED ON KEY
     // layer.options.fillColor = "red";
     const name = country.properties.ADMIN;
     // const confirmedText = country.properties.confirmedText;
-    const countryObj = coffees.find((coffee) => coffee.country == name)
+    const countryObj = coffees.find((coffee) => coffee.country === name)
     if (countryObj != null){
     layer.bindPopup(`${name} ${countryObj.export_volume}`);
     const exportVol = stripNumber(countryObj.export_volume)
@@ -106,7 +108,7 @@ const onEachCountry = (country, layer) =>  {
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             /> */}
-            <GeoJSON data={countries} onEachFeature={onEachCountry}  style={mapStyle} />
+            <GeoJSON data={countries} onEachFeature={onEachCountry} style={mapStyle}/>
     </MapContainer>
     </div>
     
