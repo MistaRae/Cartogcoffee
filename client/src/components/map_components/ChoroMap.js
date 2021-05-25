@@ -6,23 +6,29 @@ import NavBarCountry from "../NavBarCountry"
 
 const ChoroMap = ({ countries, coffees, onChangeLegend}) => {
 
-    const [selectedStat, setSelectedStat] = useState('Producers');
+    const [selectedStat, setSelectedStat] = useState([]);
 
     useEffect(() => {
-        setSelectedStat('Producers')
-      }, [])
+        onEachCountry()
+      }, [onChangeLegend])
 
     const onProducersClick = function () {
+        console.log('test')
         setSelectedStat('Producers')
-        onChangeLegend('Producers') }
+        onChangeLegend('Producers') 
+    }
     
     const onExportersClick = function () {
+        console.log('test')
         setSelectedStat('Exporters')
-        onChangeLegend('Exporters') }
+        onChangeLegend('Exporters') 
+    }
 
     const onFarmsClick = function () {
+        console.log('test')
         setSelectedStat('Farms')
-        onChangeLegend('Farms') }
+        onChangeLegend('Farms') 
+    }
 
     const mapStyle = {
         // fillColor: "rgb(240, 237, 230)",
@@ -73,6 +79,7 @@ const exportLegend = [10_000_000, 5_000_000, 2_000_000, 500_000]
 // }
 
 const onEachCountry = (country, layer) =>  {
+    if (country)  {
     // DIRECTLY CHANGE COLOURS BASED ON KEY
     // layer.options.fillColor = "red";
     const name = country.properties.ADMIN;
@@ -81,8 +88,9 @@ const onEachCountry = (country, layer) =>  {
     if (countryObj != null){
     layer.bindPopup(`${name} ${countryObj.export_volume}`);
     const exportVol = stripNumber(countryObj.export_volume)
-    const foundColor = legend(exportVol, exportLegend)
+    const foundColor = legend(exportVol, [10_000_000, 5_000_000, 2_000_000, 500_000])
     layer.options.fillColor = foundColor;
+}
 }
 }
 

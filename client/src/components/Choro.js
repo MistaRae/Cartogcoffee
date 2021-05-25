@@ -46,7 +46,7 @@ const Choro = ({coffees, legend, onChangeLegend}) => {
     loadCountriesTask.load(setCountries);
   };
 
-  useEffect(load, []);
+  useEffect(load, [onChangeLegend, legend]);
 
   return (
     <div>
