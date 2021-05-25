@@ -7,15 +7,15 @@ const NavBarCountry = ({}) => {
     return (
         <div id="navbar-container">
             <span>
-            <button>Top Producers</button>
+            <button className = "button">TOP PRODUCERS</button>
             </span>
 
             <span>
-        <button>Top Exporters</button>
+        <button className = "button">TOP EXPORTERS</button>
             </span>
 
             <span>
-            <button>Top Consumers</button>
+            <button className = "button">TOP CONSUMERS</button>
             </span>
 
         </div>

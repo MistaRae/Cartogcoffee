@@ -51,6 +51,7 @@ const UiContainer = () => {
         <NavBarBottom
           onCountryClick={onCountryClick}
           onFarmClick={onFarmClick}
+          viewFarm={viewFarm}
         />
               <Footer />
       </div>

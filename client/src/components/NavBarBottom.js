@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const NavBarBottom = ({onCountryClick, onFarmClick}) =>  {
+const NavBarBottom = ({onCountryClick, onFarmClick, viewFarm}) =>  {
 
     const handleCountryStatsClick = function () {
         onCountryClick()
@@ -12,10 +12,23 @@ const NavBarBottom = ({onCountryClick, onFarmClick}) =>  {
     };
 
     return (
-        <div>
-            <button onClick = {handleFarmClick}>World Beans</button>
-            <button onClick = {handleCountryStatsClick}>Country Stats</button>
+
+        viewFarm ?
+        <div id = "nav-bar-bottom">
+
+            <button className = "button-highlighted" onClick = {handleFarmClick}>WORLD BEANS</button> : 
+            <button className = "button" onClick = {handleCountryStatsClick}>COUNTRY STATS</button>
+        
         </div>
+        :
+
+        <div id = "nav-bar-bottom">
+
+        <button className = "button" onClick = {handleFarmClick}>WORLD BEANS</button> : 
+        <button className = "button-highlighted" onClick = {handleCountryStatsClick}>COUNTRY STATS</button>
+    
+        </div>
+
     )
 }
 
