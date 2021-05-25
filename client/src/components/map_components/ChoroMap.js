@@ -13,19 +13,16 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
   }, [selectedStat]);
 
   const onProducersClick = function () {
-    console.log("test");
     onChangeLegend("Producers");
     setSelectedStat("Producers");
   };
 
   const onExportersClick = function () {
-    console.log("test");
     onChangeLegend("Exporters");
     setSelectedStat("Exporters");
   };
 
   const onFarmsClick = function () {
-    console.log("test");
     onChangeLegend("Farms");
     setSelectedStat("Farms");
   };
@@ -103,7 +100,7 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
             );
             layer.options.fillColor = foundColor;
           }
-        else if ((selectedStat == "Exporters")) {
+        else if ((selectedStat == "Farms")) {
         layer.bindPopup(`${name} ${countryObj.number_of_farms}`);
         const numberOfFarms = stripNumber(countryObj.number_of_farms);
         const foundColor = legend(
