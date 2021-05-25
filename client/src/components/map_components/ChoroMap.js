@@ -127,7 +127,8 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
         zoom={2.5}
         center={[10, 10]}
         maxBounds={[[100, 100], [-100, -100]]}
-        scrollWheelZoom={false} 
+        scrollWheelZoom={false}
+        minZoom={2}  
       >
         
         <GeoJSON data={countries} onEachFeature={onEachCountry} />

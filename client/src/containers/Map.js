@@ -138,7 +138,8 @@ const Map = ({coffees}) => {
 
           <MapContainer className="map" attributionControl={false} center={positionCenter} zoom={state.zoom}
           maxBounds={[[100, 100], [-100, -100]]}
-          scrollWheelZoom={false} >
+          scrollWheelZoom={false}
+          minZoom={2} >
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
