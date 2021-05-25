@@ -136,12 +136,40 @@ margin-bottom: 40px;
 }
 
 #prep-content {
-  padding-left: 20px
+  text-align: left;
+  padding-left: 20px;
+  
 }
 
 #prep-content > h1 {
   text-align: center;
   text-decoration: underline;
+
+
+}
+
+#prep-content > ul {
+  list-style: none;
+  font-weight: bold;
+}
+
+#prep-content > ul > li {
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+#prep-content > ul > li > a {
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+#prep-content > ul > li > a:visited {
+  color: white;
+}
+
+#prep-content > ul > li > a:hover {
+  color: white;
+  text-decoration:underline;
 }
 
 #prep-image {

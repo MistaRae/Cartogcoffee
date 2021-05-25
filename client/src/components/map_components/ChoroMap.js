@@ -6,7 +6,7 @@ import NavBarCountry from "../NavBarCountry"
 
 const ChoroMap = ({ countries, coffees, onChangeLegend}) => {
 
-    const [selectedStat, setSelectedStat] = useState('Producers');
+    const [selectedStat, setSelectedStat] = useState(null);
 
     useEffect(() => {
         setSelectedStat('Producers')
