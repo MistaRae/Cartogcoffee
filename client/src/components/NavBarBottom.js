@@ -1,11 +1,20 @@
 import React from 'react'
 
 
-const NavBarBottom = () =>  {
+const NavBarBottom = ({onCountryClick, onFarmClick}) =>  {
+
+    const handleCountryStatsClick = function () {
+        onCountryClick()
+    };
+    
+    const handleFarmClick = function () {
+        onFarmClick()
+    };
 
     return (
-        <div id="navbar-container">
-            <p>hello</p>
+        <div>
+            <button onClick = {handleFarmClick}>World Beans</button>
+            <button onClick = {handleCountryStatsClick}>Country Stats</button>
         </div>
     )
 }
