@@ -10,7 +10,7 @@ const ChoroMap = ({ countries, coffees, onChangeLegend}) => {
 
     useEffect(() => {
         onEachCountry()
-      }, [])
+      }, [onProducersClick, onExportersClick, onFarmsClick])
 
     const onProducersClick = function () {
         console.log('test')
