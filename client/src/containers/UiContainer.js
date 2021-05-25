@@ -6,11 +6,24 @@ import Footer from "../components/Footer";
 import Choro from "../components/Choro";
 import { getCoffees } from "../Services";
 import NavBarBottom from "../components/NavBarBottom";
+import { features } from "../data/countries.json";
 
 const UiContainer = () => {
   const [coffees, setCoffees] = useState([]);
   const [legend, setLegend] = useState([]);
   const [viewFarm, setViewFarm] = useState(true);
+  const [countries, setCountries] = useState([]);
+
+  const load = () => {
+    for (let i = 0; i < features.length; i++) {
+      const mapCountry = features[i];
+
+    }
+    setCountries(features);
+  };
+
+  useEffect(load, [legend]);
+
 
   useEffect(() => {
     getCoffees().then((allCoffees) => {
@@ -78,7 +91,7 @@ const UiContainer = () => {
   ) : (
     <>
       <div id="Ui-Container">
-        <Choro legend={legend} coffees={coffees} onChangeLegend={onChangeLegend}/>
+        <Choro countries={countries} legend={legend} coffees={coffees} onChangeLegend={onChangeLegend}/>
       </div>
       <div>
         <NavBarBottom
