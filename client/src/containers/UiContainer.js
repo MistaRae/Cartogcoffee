@@ -39,7 +39,7 @@ const UiContainer = () => {
   return viewFarm ? (
     <div id="Ui-Container">
       <Map coffees={coffees} />
-      <NavBarBottom onCountryClick={onCountryClick} onFarmClick={onFarmClick} />
+      <NavBarBottom viewFarm={viewFarm} onCountryClick={onCountryClick} onFarmClick={onFarmClick} />
       <Footer />
     </div>
   ) : (
