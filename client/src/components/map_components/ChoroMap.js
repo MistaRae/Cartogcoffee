@@ -4,22 +4,28 @@ import "leaflet/dist/leaflet.css";
 import "./ChoroMap.css"
 import NavBarCountry from "../NavBarCountry"
 
+// from Choro
 const ChoroMap = ({ countries, coffees, onChangeLegend}) => {
 
-    const [selectedStat, setSelectedStat] = useState(null);
 
     useEffect(() => {
-        setSelectedStat('Producers')
-      }, [selectedStat])
+        onEachCountry()
+      }, [])
 
     const onProducersClick = function () {
-        onChangeLegend('Producers')}
+        console.log('test')
+        onChangeLegend('Producers') 
+    }
     
     const onExportersClick = function () {
-        onChangeLegend('Exporters')}
+        console.log('test')
+        onChangeLegend('Exporters') 
+    }
 
     const onFarmsClick = function () {
-        onChangeLegend('Farms')}
+        console.log('test')
+        onChangeLegend('Farms') 
+    }
 
     const mapStyle = {
         // fillColor: "rgb(240, 237, 230)",
@@ -70,18 +76,22 @@ const exportLegend = [10_000_000, 5_000_000, 2_000_000, 500_000]
 // }
 
 const onEachCountry = (country, layer) =>  {
+    if (country)  {
+    // layer.options.color = "white";
+    // layer.weight = "0.6";
     // DIRECTLY CHANGE COLOURS BASED ON KEY
     // layer.options.fillColor = "red";
     const name = country.properties.ADMIN;
     // const confirmedText = country.properties.confirmedText;
-    const countryObj = coffees.find((coffee) => coffee.country == name)
+    const countryObj = coffees.find((coffee) => coffee.country === name)
     if (countryObj != null){
     layer.bindPopup(`${name} ${countryObj.export_volume}`);
     const exportVol = stripNumber(countryObj.export_volume)
-    const foundColor = legend(exportVol, exportLegend)
+    const foundColor = legend(exportVol, [10_000_000, 5_000_000, 2_000_000, 500_000])
     layer.options.fillColor = foundColor;
-   
-}
+    console.log('layer:', layer.options.fillColor)
+  }
+ }
 }
 
  
@@ -96,8 +106,7 @@ const onEachCountry = (country, layer) =>  {
         <GeoJSON data={countries} style={mapStyle} onEachFeature={onEachCountry} />
     </MapContainer>
     </div>
-    
-    ); 
+    )
 };
  
 export default ChoroMap;
