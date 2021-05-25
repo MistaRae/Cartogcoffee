@@ -13,14 +13,16 @@ const ChoroMap = ({ countries, coffees, onChangeLegend}) => {
       }, [])
 
     const onProducersClick = function () {
-        setSelectedStat('Producers') }
+        setSelectedStat('Producers')
+        onChangeLegend('Producers') }
     
     const onExportersClick = function () {
-        setSelectedStat('Exporters') }
+        setSelectedStat('Exporters')
+        onChangeLegend('Exporters') }
 
     const onFarmsClick = function () {
         setSelectedStat('Farms')
-        onChangeLegend() }
+        onChangeLegend('Farms') }
 
     const mapStyle = {
         // fillColor: "rgb(240, 237, 230)",
