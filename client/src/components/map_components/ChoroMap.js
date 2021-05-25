@@ -10,19 +10,16 @@ const ChoroMap = ({ countries, coffees, onChangeLegend}) => {
 
     useEffect(() => {
         setSelectedStat('Producers')
-      }, [])
+      }, [selectedStat])
 
     const onProducersClick = function () {
-        setSelectedStat('Producers')
-        onChangeLegend('Producers') }
+        onChangeLegend('Producers')}
     
     const onExportersClick = function () {
-        setSelectedStat('Exporters')
-        onChangeLegend('Exporters') }
+        onChangeLegend('Exporters')}
 
     const onFarmsClick = function () {
-        setSelectedStat('Farms')
-        onChangeLegend('Farms') }
+        onChangeLegend('Farms')}
 
     const mapStyle = {
         // fillColor: "rgb(240, 237, 230)",
@@ -83,6 +80,7 @@ const onEachCountry = (country, layer) =>  {
     const exportVol = stripNumber(countryObj.export_volume)
     const foundColor = legend(exportVol, exportLegend)
     layer.options.fillColor = foundColor;
+   
 }
 }
 
@@ -95,12 +93,7 @@ const onEachCountry = (country, layer) =>  {
     onFarmsClick={onFarmsClick}
     />
     <MapContainer className="map"  attributionControl={false} zoom={2.5} center={[10, 10]}>
-
-                    {/* <TileLayer
-              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            /> */}
-            <GeoJSON data={countries} style={mapStyle} onEachFeature={onEachCountry} />
+        <GeoJSON data={countries} style={mapStyle} onEachFeature={onEachCountry} />
     </MapContainer>
     </div>
     
