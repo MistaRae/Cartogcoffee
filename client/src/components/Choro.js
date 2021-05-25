@@ -5,6 +5,8 @@ import Legend from "./map_components/Legend";
 import papa from "papaparse";
 import { features } from "../data/countries.json";
 
+
+// DEAD CODE THAT CANNOT BE DELETED YET, WHY CAN I NOT REFACTOR THIS TO JUST HAVE 'features' AS A STATE? FIX!!
 class LoadCountriesTask {
   covid19Dataurl =
     "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/web-data/data/cases_country.csv";
@@ -32,8 +34,10 @@ class LoadCountriesTask {
 
 }
 
+// END OF OLD DEAD CODE THAT NEEDS TO STAY IN PLACE.
 
-const Choro = ({coffees, legend}) => {
+
+const Choro = ({coffees, legend, onChangeLegend}) => {
   const [countries, setCountries] = useState([]);
 
 
@@ -50,7 +54,7 @@ const Choro = ({coffees, legend}) => {
         <Loading />
       ) : (
         <div>
-          <ChoroMap countries={countries} coffees={coffees} />
+          <ChoroMap countries={countries} coffees={coffees} onChangeLegend={onChangeLegend}/>
           <Legend legend={legend}/>
         </div>
       )}

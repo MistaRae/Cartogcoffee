@@ -1,11 +1,29 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {MapContainer, GeoJSON, TileLayer} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./ChoroMap.css"
 import NavBarCountry from "../NavBarCountry"
 
-const ChoroMap = ({ countries, coffees }) => {
-    console.log(countries)
+const ChoroMap = ({ countries, coffees, onChangeLegend}) => {
+
+    const [selectedStat, setSelectedStat] = useState('Producers');
+
+    useEffect(() => {
+        setSelectedStat('Producers')
+      }, [])
+
+    const onProducersClick = function () {
+        setSelectedStat('Producers')
+        onChangeLegend('Producers') }
+    
+    const onExportersClick = function () {
+        setSelectedStat('Exporters')
+        onChangeLegend('Exporters') }
+
+    const onFarmsClick = function () {
+        setSelectedStat('Farms')
+        onChangeLegend('Farms') }
+
     const mapStyle = {
         // fillColor: "rgb(240, 237, 230)",
         fillColor: "white",
@@ -48,6 +66,12 @@ function stripNumber(numberString) {
 
 const exportLegend = [10_000_000, 5_000_000, 2_000_000, 500_000]
 
+// const exportLegend = () =>  {
+//     if (selectedStat == 'Producers') {
+//     return [10_000_000, 5_000_000, 2_000_000, 500_000]
+// }
+// }
+
 const onEachCountry = (country, layer) =>  {
     // DIRECTLY CHANGE COLOURS BASED ON KEY
     // layer.options.fillColor = "red";
@@ -65,7 +89,11 @@ const onEachCountry = (country, layer) =>  {
  
     return ( 
     <div>
-    <NavBarCountry />
+    <NavBarCountry 
+    onProducersClick={onProducersClick} 
+    onExportersClick={onExportersClick} 
+    onFarmsClick={onFarmsClick}
+    />
     <MapContainer className="map"  attributionControl={false} zoom={2.5} center={[10, 10]}>
 
                     {/* <TileLayer

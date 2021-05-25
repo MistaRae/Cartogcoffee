@@ -27,6 +27,39 @@ const UiContainer = () => {
     setViewFarm(true);
   };
 
+  const onChangeLegend = (category) => {
+    if (category == "Farms") {
+    setLegend([
+      100,
+      50,
+      10,
+      1,
+      "No Data",
+      "Number of Farms",
+    ])
+  }
+  else if (category == "Producers") {
+    setLegend([
+      5_000_000,
+      2_000_000,
+      1_000_000,
+      100_000,
+      "No Data",
+      "60kg bags / year",
+    ])
+  }
+  else if (category == "Exporters") {
+    setLegend([
+      4_000_000,
+      1_000_000,
+      500_0000,
+      100_000,
+      "No Data",
+      "60kg bags / year",
+    ])
+  }
+  }
+
   const exportLegend = [
     10_000_000,
     5_000_000,
@@ -45,7 +78,7 @@ const UiContainer = () => {
   ) : (
     <>
       <div id="Ui-Container">
-        <Choro legend={legend} coffees={coffees} />
+        <Choro legend={legend} coffees={coffees} onChangeLegend={onChangeLegend}/>
       </div>
       <div>
         <NavBarBottom
