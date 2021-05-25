@@ -24,7 +24,7 @@ const MarkerList = ({coffees, icon}) => {
                 </ul>
             </p>
             </div>
-            </Popup>
+            </Popup >
             <Tooltip direction="bottom" offset={[0, 20]} opacity={0.9}>{coffee.country}</Tooltip>
             </Marker>
     });

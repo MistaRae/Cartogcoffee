@@ -3,6 +3,7 @@ import { MapContainer, GeoJSON, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./ChoroMap.css";
 import NavBarCountry from "../NavBarCountry";
+import L from 'leaflet';
 
 // from Choro
 const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
