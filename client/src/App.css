@@ -46,6 +46,9 @@ body {
   border-color: black;
   /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
+#header > h1:hover {
+  cursor:pointer;
+  }
 
 #footer {
   flex-shrink: 0;
@@ -71,6 +74,7 @@ body {
 #prep-link:hover {
   color: white;
   text-decoration: underline;
+  cursor:pointer;
  }
 
 #copyright {
@@ -83,6 +87,7 @@ body {
 #copyright:hover {
   color: white;
   text-decoration: underline;
+  cursor:pointer;
 }
 
 #footer-names {
@@ -97,6 +102,7 @@ body {
 #footer-names > p:hover {
   color: white;
   text-decoration: underline;
+  cursor:pointer;
 }
 
 #Ui-Container {
