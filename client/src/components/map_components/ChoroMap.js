@@ -8,9 +8,16 @@ import L from 'leaflet';
 // from Choro
 const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
   const [selectedStat, setSelectedStat] = useState("Producers");
+  const [key, setKey] = useState(1)
+
+  function changeKey ()  {
+    let updatedKey = key + 1
+    setKey(updatedKey)
+  }
 
   useEffect(() => {
     onEachCountry();
+    changeKey()
   }, [selectedStat]);
 
   const onProducersClick = function () {
@@ -132,6 +139,8 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
     }
   };
 
+  
+
   return (
     <div>
       <NavBarCountry
@@ -148,8 +157,9 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
         scrollWheelZoom={false}
         minZoom={2}  
       >
+
         
-        <GeoJSON data={countries} onEachFeature={onEachCountry} />
+        <GeoJSON key={key} data={countries} onEachFeature={onEachCountry} />
       </MapContainer>
     </div>
   );
