@@ -84,7 +84,7 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
       const countryObj = coffees.find((coffee) => coffee.country === name);
       if (countryObj != null) {
         if ((selectedStat == "Producers")) {
-          layer.bindPopup(`${name} ${countryObj.production_volume}`);
+          layer.bindPopup(`${name} ${countryObj.production_volume} 60kg bags/year`);
           const productionVol = stripNumber(countryObj.production_volume);
           const foundColor = legend(
             productionVol,
@@ -93,7 +93,7 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
           layer.options.fillColor = foundColor;
         }
         else if ((selectedStat == "Exporters")) {
-            layer.bindPopup(`${name} ${countryObj.export_volume}`);
+            layer.bindPopup(`${name} ${countryObj.export_volume} 60kg bags/year`);
             const exportVol = stripNumber(countryObj.export_volume);
             const foundColor = legend(
               exportVol,
@@ -102,7 +102,7 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
             layer.options.fillColor = foundColor;
           }
         else if ((selectedStat == "Farms")) {
-        layer.bindPopup(`${name} ${countryObj.number_of_farms}`);
+        layer.bindPopup(`${name} ${countryObj.number_of_farms} farms`);
         const numberOfFarms = stripNumber(countryObj.number_of_farms);
         const foundColor = legend(
             numberOfFarms,

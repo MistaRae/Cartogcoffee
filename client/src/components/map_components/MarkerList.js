@@ -20,7 +20,7 @@ const MarkerList = ({coffees, icon}) => {
                     <li>Production Volume: {coffee.production_volume} 60kg bags per year</li>
                     <li>Bean Type: {coffee.bean_type}</li>
                     <li>Taste Profile: {coffee.taste_profile}</li>
-                    <li>Export Volume: {coffee.export_volume} per year</li>
+                    <li>Export Volume: {coffee.export_volume} 60kg bags per year</li>
                 </ul>
             </p>
             </div>
