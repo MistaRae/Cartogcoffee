@@ -42,10 +42,10 @@ const UiContainer = () => {
   const onChangeLegend = (category) => {
     if (category == "Farms") {
     setLegend([
-      100,
-      50,
+      20,
+      15,
       10,
-      1,
+      5,
       "No Data",
       "Number of Farms",
     ])
@@ -62,10 +62,10 @@ const UiContainer = () => {
   }
   else if (category == "Exporters") {
     setLegend([
-      4_000_000,
-      1_000_000,
-      500_0000,
-      100_000,
+      10_000_000,
+      5_000_000,
+      2_000_000,
+      500_000,
       "No Data",
       "60kg bags / year",
     ])

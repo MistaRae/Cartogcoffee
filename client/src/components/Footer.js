@@ -43,7 +43,7 @@ const Footer = ({onCountryClick, onFarmClick}) => {
                 <p onClick ={handleAaronClick}>Aaron Mckie</p>
             </div>
         </div>
-        
+         
     )
 }
 

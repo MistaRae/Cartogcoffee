@@ -45,13 +45,13 @@ const Map = ({coffees}) => {
       map.flyTo([10, 0], 3)
     }
     else if (selectedRegion === "Americas") {
-      map.flyTo([-16, -60], 3.5)
+      map.flyTo([-8, -60], 3.5)
     }
     else if (selectedRegion === "Africa") {
-      map.flyTo([0, 13], 3.9)
+      map.flyTo([0, 13], 3.8)
     }
     else if (selectedRegion === "Asia") {
-      map.flyTo([15, 110], 4.2)
+      map.flyTo([15, 110], 4.0)
     }
     return null
   };
@@ -136,7 +136,10 @@ const Map = ({coffees}) => {
           />
 
 
-          <MapContainer className="map" attributionControl={false} center={positionCenter} zoom={state.zoom} >
+          <MapContainer className="map" attributionControl={false} center={positionCenter} zoom={state.zoom}
+          maxBounds={[[400, 400], [-400, -200]]}
+          scrollWheelZoom={false}
+          minZoom={2}>
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
