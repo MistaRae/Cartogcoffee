@@ -82,6 +82,23 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
 
       const countryObj = coffees.find((coffee) => coffee.country === name);
       if (countryObj != null) {
+        layer.on({
+          mouseover: (event) =>  {
+            event.target.setStyle( {
+              weight: 4,
+              color: "rgb(253, 255, 120)"
+            });
+          },
+  
+          mouseout: (event) =>  {
+            event.target.setStyle( {
+              weight: 0.6,
+              color: "white"
+            });
+          }
+        })
+
+
         if ((selectedStat == "Producers")) {
           layer.bindPopup(`${name} ${countryObj.production_volume} 60kg bags/year`);
           const productionVol = stripNumber(countryObj.production_volume);
