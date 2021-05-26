@@ -131,6 +131,7 @@ margin-bottom: 40px;
   /* background-image: src="https://images.unsplash.com/photo-1455134168668-4066045897c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80"  */
 }
 #prep-content-container {
+  height: 69vh;
   display: flex;
   color:antiquewhite
 }
@@ -176,6 +177,8 @@ margin-bottom: 40px;
   /* align-content: center; */
   /* max-width: 50%;
   clip-path: circle(40%); */
+  flex-shrink: 0;
+  flex-grow: 0;
   display: flex;
   justify-content: left;
 
