@@ -86,7 +86,7 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
           mouseover: (event) =>  {
             event.target.setStyle( {
               weight: 4,
-              color: "rgb(253, 255, 120)"
+              // color: "rgb(253, 255, 120)"
             });
           },
   
