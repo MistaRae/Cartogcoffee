@@ -52,10 +52,10 @@ const UiContainer = () => {
   }
   else if (category == "Producers") {
     setLegend([
+      10_000_000,
       5_000_000,
       2_000_000,
-      1_000_000,
-      100_000,
+      500_000,
       "No Data",
       "60kg bags / year",
     ])
