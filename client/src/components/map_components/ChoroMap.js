@@ -139,7 +139,7 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
         onFarmsClick={onFarmsClick}
       />
       <MapContainer
-        className="map"
+        className="mapChoro"
         attributionControl={false}
         zoom={2.5}
         center={[10, 10]}

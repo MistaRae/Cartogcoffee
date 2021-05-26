@@ -44,6 +44,7 @@ body {
   }
 
 #navbar-container {
+    height: 3vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -87,6 +88,10 @@ body {
 /* DO NOT adjust as it messes up zoom/fly settings */
 .map {
   height: 60vh;
+}
+
+.mapChoro {
+  height: 58vh;
 }
 
 #property {
