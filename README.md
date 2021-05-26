@@ -20,3 +20,13 @@ our app must display educational content regarding coffee:
   - add a choropleth to the map to display coffee production/consumption in each country 
   - additional styling
   
+#INSTRUCTIONS:
+
+  -  from CLIENT directory install required packages: npm install 
+  -  from SERVER directory install required packages: npm install 
+  -  from SERVER directory seed mongodb database: npm run seeds
+  -  from SERVER directory spin up the development server: npm run server:dev
+  -  from CLIENT directory spin up the react server: npm start 
+  -  if this doesnt open your browser automatically, open up a new window on localhost:3000
+  -  we recomend CHROME as this is what it was designed in.
+
