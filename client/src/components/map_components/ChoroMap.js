@@ -130,7 +130,7 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
         const numberOfFarms = stripNumber(countryObj.number_of_farms);
         const foundColor = legend(
             numberOfFarms,
-            [5, 10, 15, 20]
+            [20, 15, 10, 5]
         );
         layer.options.fillColor = foundColor;
         }
