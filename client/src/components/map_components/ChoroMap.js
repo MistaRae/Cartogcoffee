@@ -3,13 +3,21 @@ import { MapContainer, GeoJSON, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./ChoroMap.css";
 import NavBarCountry from "../NavBarCountry";
+import L from 'leaflet';
 
 // from Choro
 const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
   const [selectedStat, setSelectedStat] = useState("Producers");
+  const [key, setKey] = useState(1)
+
+  function changeKey ()  {
+    let updatedKey = key + 1
+    setKey(updatedKey)
+  }
 
   useEffect(() => {
     onEachCountry();
+    changeKey()
   }, [selectedStat]);
 
   const onProducersClick = function () {
@@ -86,7 +94,7 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
           mouseover: (event) =>  {
             event.target.setStyle( {
               weight: 4,
-              color: "rgb(253, 255, 120)"
+              // color: "rgb(253, 255, 120)"
             });
           },
   
@@ -122,7 +130,7 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
         const numberOfFarms = stripNumber(countryObj.number_of_farms);
         const foundColor = legend(
             numberOfFarms,
-            [5, 10, 15, 20]
+            [20, 15, 10, 5]
         );
         layer.options.fillColor = foundColor;
         }
@@ -130,6 +138,8 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
       }
     }
   };
+
+  
 
   return (
     <div>
@@ -147,8 +157,9 @@ const ChoroMap = ({ countries, coffees, onChangeLegend }) => {
         scrollWheelZoom={false}
         minZoom={2}  
       >
+
         
-        <GeoJSON data={countries} onEachFeature={onEachCountry} />
+        <GeoJSON key={key} data={countries} onEachFeature={onEachCountry} />
       </MapContainer>
     </div>
   );

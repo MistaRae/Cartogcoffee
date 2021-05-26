@@ -16,11 +16,6 @@ const Map = ({coffees}) => {
   const [selectedBean, setSelectedBean] = useState('Both');
   const [filteredCoffees, setFilteredCoffees] = useState([coffees])
 
-  // useEffect(() => {
-  //   getCoffees().then((allCoffees) => {
-  //     setCoffees(allCoffees);
-  //   });
-  // }, []);
 
   useEffect(() => {
     filterCoffees()
@@ -139,7 +134,8 @@ const Map = ({coffees}) => {
           <MapContainer className="map" attributionControl={false} center={positionCenter} zoom={state.zoom}
           maxBounds={[[400, 400], [-400, -200]]}
           scrollWheelZoom={false}
-          minZoom={2}>
+          minZoom={2}
+           >
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
