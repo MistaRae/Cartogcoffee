@@ -91,13 +91,14 @@ const UiContainer = () => {
     <div>
       <div id="Ui-Container">
         <Choro countries={countries} legend={legend} coffees={coffees} onChangeLegend={onChangeLegend}/>
-      </div>
+      
       <div>
             <NavBarBottom
               onCountryClick={onCountryClick}
               onFarmClick={onFarmClick}
               viewFarm={viewFarm}/>
             <Footer />
+      </div>
       </div>
     </div>
   );
