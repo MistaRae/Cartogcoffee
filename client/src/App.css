@@ -1,68 +1,62 @@
 
 .App {
   text-align: center;
+  display:flex;
+  flex-direction: column;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: black;
+  animation: fadeInAnimation ease-in 3.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      background-color: black;
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
 }
 
 #header {
   color: antiquewhite;
   background-image: url(https://images.unsplash.com/photo-1551610290-e153ec567dd8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1513&q=80);
-  background-blend-mode: darken;
+  background-position-x: center;
 }
 
 #header > h1 { 
   margin: 0;
-  font-size:120pt;
+  font-size:100pt;
   border-style: solid;
   border-color: black;
-  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
-#footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-  color: antiquewhite;
-  background-image: url(https://images.unsplash.com/photo-1551610290-e153ec567dd8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1513&q=80);
-}
+#header > h1:hover {
+  cursor:pointer;
+  }
 
-#socials {
-  width: 10%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 25px
-}
-
-.social-image {
-  background-color: white;
-  border-style: solid;
-  border-width: 0pt;
-  border-color: black;
-  border-radius: 30%;
-  width: 25px;
-  height: 25px;
-}
-
-#copyright {
-  /* padding: 20px; */
-  font-weight: bold;
-  font-size: 20pt;
-}
-
-#footer {
-  padding: 20px
-}
-
-#footer-names > p {
-  margin: 0;
-  text-align: right;
-}
+#navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+  }
 
 #Ui-Container {
+  flex: 1 0 auto;
   max-width: 100%;
   max-height: auto;
-  /* background-image: url(https://images.unsplash.com/photo-1551610290-e153ec567dd8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1513&q=80); */
+  background-color: black;
+  border-style: solid;
+  border-width: 20px;
 }
 
 #map-container {
@@ -73,27 +67,203 @@
   margin-bottom: px;
   width: 500px;
   color: black;
-  /* background-image: url(https://images.unsplash.com/photo-1465176728568-7da7e336b1e9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80); */
   background-size: cover;
   background-repeat: no-repeat;
   padding: 100px;  
 }
 
-#navbar-container {
+.drop-down {
+  margin-bottom: 5%;
+  color:antiquewhite;
+  background-color:transparent;
+  border-color: transparent;
+  padding: 1%;
+  font-size: large;
+  font-weight: bolder;
+  
+
+}
+
+/* DO NOT adjust as it messes up zoom/fly settings */
+.map {
+  height: 60vh;
+}
+
+#property {
+  background-color: rgba(62, 20, 20, 0.818);
+  color: white;
+}
+
+#popup  {
+  display: flexbox;
+  justify-content: center;
+  text-shadow: snow;
+  font-weight: bold;
+  /* background:antiquewhite; */
+  background-size: unset;
+  color: lightslategray;
+  border-radius: 0%;
+}
+
+#popup > h3 {
+  color: darkgrey ;
+  margin-bottom: 2px;
+  font-size: x-large;
+  text-align: center;
+}
+
+#region-popup {
+  /* color: red; */
+}
+
+.navButtons {
+margin-bottom: 40px;
+}
+
+#prep {
+  /* display:flex; */
+  /* padding-top: 36.82px; */
+  flex: 1 0 auto;
+  align-items: start;
+  background-color: black;
+  border-style: solid;
+  border-width: 20px;
+  /* background-image: src="https://images.unsplash.com/photo-1455134168668-4066045897c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80"  */
+}
+#prep-content-container {
+  display: flex;
+  color:antiquewhite
+}
+
+#prep-content {
+  text-align: left;
+  padding-left: 20px;
+  
+}
+
+#prep-content > h1 {
+  text-align: center;
+  text-decoration: underline;
+
+
+}
+
+#prep-content > ul {
+  list-style: none;
+  font-weight: bold;
+}
+
+#prep-content > ul > li {
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+#prep-content > ul > li > a {
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+#prep-content > ul > li > a:visited {
+  color: white;
+}
+
+#prep-content > ul > li > a:hover {
+  color: white;
+  text-decoration:underline;
+}
+
+#prep-image {
+  /* align-content: center; */
+  /* max-width: 50%;
+  clip-path: circle(40%); */
+  display: flex;
+  justify-content: left;
+
+  /* clip-path: polygon(0% 30%, 30% 100%, 0% 100%, 0% 70%); */
+  /* animation-name: shrinkPrepImage;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards; */
+  padding-bottom: 18px;
+}
+
+/* @keyframes shrinkPrepImage {
+  0%    {max-width: 100%;}
+  100%   {max-width: 35%;}
+
+} */
+
+#nav-bar-bottom {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+#footer {
+  flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  padding-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+  color: antiquewhite;
+  background-image: url(https://images.unsplash.com/photo-1551610290-e153ec567dd8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1513&q=80);
+  background-position-x: center;
 }
 
-.drop-down {
-  color:antiquewhite;
-  background-color:black;
-  border-color: black;
-  font-size: larger;
+#prep-link {
+  padding-left: 30px;
+  font-weight: bold;
+ }
+ 
+ #prep-link:hover {
+   color: white;
+   text-decoration: underline;
+   cursor:pointer;
+  }
+ 
+ #copyright {
+   font-weight: bold;
+   font-size: 15pt;
+   padding: 0;
+   margin: 0;
+ }
+ 
+ #copyright:hover {
+   color: white;
+   text-decoration: underline;
+   cursor:pointer;
+ }
+ 
+ #footer-names {
+   padding-top: 15px;
+   padding-bottom: 15px;
+   padding-right: 30px
+ }
+ 
+ #footer-names > p {
+   margin: 0;
+   text-align: right;
+   font-weight: bold;
+ }
+ #footer-names > p:hover {
+   color: white;
+   text-decoration: underline;
+   cursor:pointer;
+ }
+
+.button { 
+  background-color: black;
+  color: antiquewhite;
+  font-weight: bold;
+  border-style: none;
+}
+.button:hover {
+  color: white;
+  text-decoration: underline;
+  cursor:pointer;
 }
 
-.map {
-  height: 70vh;
-  width: 70vh;
+.button-highlighted {
+  border-style: solid;
+  border-color: antiquewhite;
+  border-width: 2px;
 }
